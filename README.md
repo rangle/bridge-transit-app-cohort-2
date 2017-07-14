@@ -1,9 +1,9 @@
-# Bridge LCBO App Cohort 2
+# Bridge Transit App Cohort 2
 
 | **Build**  | **Status**  |
 |---|---|
-| Circle CI | [![CircleCI](https://circleci.com/gh/rangle/bridge-lcbo-app-cohort-2.svg?style=svg)](https://circleci.com/gh/rangle/bridge-lcbo-app-cohort-2) |
-| Heroku | ![Heroku](http://heroku-badge.herokuapp.com/?app=bridge-lcbo-app-cohort-2&style=flat) |
+| Circle CI | [![CircleCI](https://circleci.com/gh/rangle/bridge-transit-app-cohort-2.svg?style=svg)](https://circleci.com/gh/rangle/bridge-transit-app-cohort-2) |
+| Heroku | ![Heroku](http://heroku-badge.herokuapp.com/?app=bridge-transit-app-cohort-2&style=flat) |
 
 ## Heroku
 
