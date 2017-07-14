@@ -3,7 +3,7 @@
 | **Build**  | **Status**  |
 |---|---|
 | Circle CI | [![CircleCI](https://circleci.com/gh/rangle/bridge-transit-app-cohort-2.svg?style=svg)](https://circleci.com/gh/rangle/bridge-transit-app-cohort-2) |
-| Heroku | ![Heroku](http://heroku-badge.herokuapp.com/?app=bridge-transit-app-cohort-2&style=flat) |
+| Heroku | [![Heroku](http://heroku-badge.herokuapp.com/?app=bridge-transit-app-cohort-2&style=flat)](https://bridge-transit-app-cohort-2.herokuapp.com) |
 
 ## Heroku
 
