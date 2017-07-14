@@ -1,0 +1,19 @@
+{
+  "name": "rubbr",
+  "scripts": {},
+  "env": {
+    "NPM_CONFIG_PRODUCTION": {
+      "required": true
+    },
+    "NODE_MODULES_CACHE": {
+      "required": true
+    }
+  },
+  "formation": {},
+  "addons": [],
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ]
+}
