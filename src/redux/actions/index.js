@@ -1,8 +1,8 @@
 export const EVENT_ACTIONS = {
- GET_EVENT: 'GET_EVENT'
+ HELLO: 'HELLO'
 };
 
 export const getEvent = event => ({
-  type: EVENT_ACTIONS.GET_EVENT,
+  type: EVENT_ACTIONS.HELLO,
   payload: event
 });

@@ -16,7 +16,7 @@ const loggerMiddleware = createLogger()
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(createEpicMiddleware(rootEpic), loggerMiddleware),
+  applyMiddleware(loggerMiddleware),
 );
 
 const ReduxApp = () => (
