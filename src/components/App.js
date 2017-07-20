@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
+import { connect } from 'react-redux';
+import { getEvent } from './../redux/actions';
 
 class App extends Component {
   render() {
@@ -16,4 +18,11 @@ class App extends Component {
   }
 }
 
-export default App;
+const connectConfig = connect(state => ({
+  events : state.events
+}), {
+  getEvent,
+});
+
+
+export default connectConfig(App);
