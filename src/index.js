@@ -9,14 +9,17 @@ import { createLogger } from 'redux-logger';
 import rootReducer from './redux/reducers';
 // import rootEpic from './redux/epics';
 import App from './components/App';
+import { createEpicMiddleware } from 'redux-observable';
+import rootEpic from './redux/epics'
 
 import './index.css';
 
-const loggerMiddleware = createLogger()
+const loggerMiddleware = createLogger();
+const epicMiddleware = createEpicMiddleware(rootEpic);
 
 const store = createStore(
   rootReducer,
-  applyMiddleware(loggerMiddleware),
+  applyMiddleware(loggerMiddleware,epicMiddleware),
 );
 
 const ReduxApp = () => (

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import { getEvent } from './../redux/actions';
+import { testAction, pressButton } from './../redux/actions';
 
 class App extends Component {
   render() {
@@ -13,16 +13,18 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-      <button onClick={() => this.props.getEvent() }>hello</button>
+      <button onClick={(ev) => this.props.pressButton(ev) }>hello</button>
+      { this.props.results ? this.props.results.map(result => <li>result.label</li>) : null }
       </div>
     );
   }
 }
 
 const connectConfig = connect(state => ({
-  events : state.events
+  results: state.recipe
 }), {
-  getEvent,
+  testAction,
+  pressButton
 });
 
 
