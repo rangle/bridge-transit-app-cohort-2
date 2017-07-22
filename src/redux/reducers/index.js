@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux';
+import eventsReducer from './event-reducer';
+import { routerReducer } from 'react-router-redux';
 
 export const recipe = (state = [], action) => {
   switch(action.type) {
@@ -10,5 +12,7 @@ export const recipe = (state = [], action) => {
 }
 
 export default combineReducers({
-  recipe
+  recipe,
+  events: eventsReducer,
+  routing: routerReducer
 });
