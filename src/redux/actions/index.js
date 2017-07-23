@@ -1,3 +1,5 @@
+import { ACTION_TYPES } from '../../constants/ActionTypes';
+
 export const EVENT_ACTIONS = {
  HELLO: 'HELLO'
 };
@@ -7,13 +9,8 @@ export const getEvent = event => ({
   payload: event
 });
 
-export const pressButton = event => ({
-  type: 'PRESS_BUTTON',
-  payload: event
-});
 
-
-export const testAction = event => ({
-  type: 'PRINT_TEST_ACTION',
-  payload: event
+export const inputChange = value => ({
+  type: ACTION_TYPES.INPUT_CHANGE,
+  payload: value
 });
