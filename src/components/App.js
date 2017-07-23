@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { connect } from 'react-redux';
-import { testAction, pressButton } from './../redux/actions';
+import { inputChange } from './../redux/actions';
+import { SearchInput } from './SearchInput';
 
 class App extends Component {
   render() {
@@ -13,18 +14,17 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-      <button onClick={(ev) => this.props.pressButton(ev) }>hello</button>
-      { this.props.results ? this.props.results.map(result => <li>result.label</li>) : null }
+        <SearchInput {...this.props} label="Search Events"/>
       </div>
+      
     );
   }
 }
 
 const connectConfig = connect(state => ({
-  results: state.recipe
+  searchInput: state.searchInput
 }), {
-  testAction,
-  pressButton
+  inputChange
 });
 
 

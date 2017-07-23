@@ -1,18 +1,10 @@
 import { combineReducers } from 'redux';
 import eventsReducer from './event-reducer';
 import { routerReducer } from 'react-router-redux';
-
-export const recipe = (state = [], action) => {
-  switch(action.type) {
-    case 'PRINT_TEST_ACTION':
-      return action.payload;
-    default:
-      return state;
-  }
-}
+import { searchInput } from './search.reducer';
 
 export default combineReducers({
-  recipe,
+  searchInput,
   events: eventsReducer,
   routing: routerReducer
 });
