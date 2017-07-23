@@ -1,4 +1,4 @@
-import { EVENT_ACTIONS } from '../actions';
+import { ACTION_TYPES } from '../../constants/ActionTypes';
 
 const DEFAULT_STATE = {
   events: null
@@ -8,8 +8,8 @@ export default (state = DEFAULT_STATE, action) => {
 
   switch(action.type) {
 
-    case EVENT_ACTIONS.HELLO:
-      return 'hello'
+    case ACTION_TYPES.PRESS_BUTTON:
+      return action.payload
 
     default:
       return state;

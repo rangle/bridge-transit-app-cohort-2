@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
-import '../App.css';
 import { connect } from 'react-redux';
+
 import { inputChange } from './../redux/actions';
 import { SearchInput } from './SearchInput';
+import { pressButton } from './../redux/actions';
+
+import '../App.css';
+
+import Button from './Button';
 
 class App extends Component {
   render() {
+    const { pressButton, results, searchInput } = this.props;
+
     return (
       <div className="App">
         <div className="App-header">
@@ -15,6 +22,13 @@ class App extends Component {
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
         <SearchInput {...this.props} label="Search Events"/>
+      <Button 
+        className='hello'
+        aria-label='hello'
+        content='hello'
+        handleClick={ () => pressButton(searchInput) }
+      />
+      { results ? results.map(result => <li key={result.recipe.label}>{result.recipe.label}</li>) : null }
       </div>
       
     );
@@ -24,7 +38,8 @@ class App extends Component {
 const connectConfig = connect(state => ({
   searchInput: state.searchInput
 }), {
-  inputChange
+  inputChange,
+  pressButton
 });
 
 
