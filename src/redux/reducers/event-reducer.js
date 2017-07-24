@@ -1,7 +1,7 @@
 import { ACTION_TYPES } from '../../constants/ActionTypes';
 
 const DEFAULT_STATE = {
-  events: null
+  events: null, 
 };
 
 export default (state = DEFAULT_STATE, action) => {
