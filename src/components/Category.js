@@ -1,11 +1,8 @@
 import React from 'react';
-/*import pic from './pic.jpg';*/
 
 export const Category = (props) => (
-  <div className="category">
-    {props.name}
+  <div className="Category">
     <img src={props.image} alt="categoryImage" />
-
-
+    <div>{props.name}</div>
   </div>
 )
