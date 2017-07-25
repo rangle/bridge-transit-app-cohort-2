@@ -1,3 +1,5 @@
+import React from 'react';
+
 import '../App.css';
 
  const Button = ({ className, ariaLabel, content, handleClick }) => {
