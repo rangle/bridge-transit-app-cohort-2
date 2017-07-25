@@ -1,5 +1,3 @@
-import { ACTION_TYPES } from '../../constants/ActionTypes';
-
 const DEFAULT_STATE = {
   items: [
     {id: 1, name: 'Technology', name_localized: 'technology', short_name: 'tech', subcategories: [{name: 'women in tech', parent_category: 'techology'}], image: 'http://loremflickr.com/200/200/technology'},
