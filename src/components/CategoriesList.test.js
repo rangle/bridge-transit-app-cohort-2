@@ -6,16 +6,18 @@ import { Category } from './Category';
 
 it('renders without crashing', () => {
   const props = {
-    categories: [{}, {}, {}]
+    allCategories: [{}, {}, {}],
+    selectedCategories: null,
   };
 
   const div = document.createElement('div');
   ReactDOM.render(<CategoriesList {...props} />, div);
 });
 
-it('renders correct number of child nodes', () => {
+it('renders correct number of child nodes when selectedCategories is empty', () => {
   const props = {
-    categories: [{}, {}, {}]
+    allCategories: [{}, {}, {}],
+    selectedCategories: null,
   };
 
   const wrapper = shallow(<CategoriesList {...props} />);
