@@ -1,3 +1,5 @@
+import { ACTION_TYPES } from '../../constants/ActionTypes';
+
 const DEFAULT_STATE = {
   items: [
     {id: 1, name: 'Technology', name_localized: 'technology', short_name: 'tech', subcategories: [{name: 'women in tech', parent_category: 'techology'}], image: 'http://loremflickr.com/200/200/technology'},
@@ -7,10 +9,14 @@ const DEFAULT_STATE = {
     {id: 5, name: 'Music', name_localized: 'music', short_name: 'music', subcategories: [{name: 'concerts', parent_category: 'music'}], image: 'http://loremflickr.com/200/200/music'},
     {id: 6, name: 'Art', name_localized: 'art', short_name: 'art', subcategories: [{name: 'galleries', parent_category: 'art'}], image: 'http://loremflickr.com/200/200/art'},
   ],
+  searchKeyword: '',
 };
 
 export default (state = DEFAULT_STATE, action) => {
  switch(action.type) {
+
+  case ACTION_TYPES.SET_SEARCH_KEYWORD:
+    return { ...state, searchKeyword: action.payload };
 
     default:
       return state;
