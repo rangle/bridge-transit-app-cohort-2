@@ -1,19 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { inputChange, setSearchKeyword } from './../redux/actions';
+import { inputChange, setSearchKeyword, getCategories } from './../redux/actions';
+import { SearchInput } from './SearchInput';
+import { CategoriesList } from './CategoriesList';
+import Button from './Button';
 
 import '../App.css';
 
-import Button from './Button';
-import { SearchInput } from './SearchInput';
-import { CategoriesList } from './CategoriesList';
-
 class App extends Component {
   render() {
-    const { 
-      searchInput, 
-      allCategories, 
+    const {
+      searchInput,
+      allCategories,
       selectedCategories,
       setSearchKeyword,
     } = this.props;
@@ -21,7 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <SearchInput {...this.props} label="Search Events"/>
-        <Button 
+        <Button
           className='hello'
           aria-label='hello'
           content='hello'
@@ -29,7 +28,7 @@ class App extends Component {
         />
         <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
       </div>
-      
+
     );
   }
 }
