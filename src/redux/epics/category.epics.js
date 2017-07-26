@@ -4,7 +4,7 @@ import 'rxjs/add/operator/mergeMap';
 
 const EVENTBRITE_API_KEY = 'QWZWM6CDIXJRAOHDGJ7Y';
 
-const BASE_ENDPOINT = `https://www.eventbriteapi.com/categories/?token=${EVENTBRITE_API_KEY}`;
+const BASE_ENDPOINT = `https://www.eventbriteapi.com/v3/categories/?token=${EVENTBRITE_API_KEY}`;
 
 export const getCategoryEpic = action$ =>
   action$.ofType(ACTION_TYPES.GET_CATEGORIES)
