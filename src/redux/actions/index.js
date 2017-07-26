@@ -10,9 +10,9 @@ export const inputChange = value => ({
   payload: value
 });
 
-export const pressButton = event => ({
-  type: ACTION_TYPES.PRESS_BUTTON ,
-  payload: event
+export const setSearchKeyword = value => ({
+  type: ACTION_TYPES.SET_SEARCH_KEYWORD,
+  payload: value
 });
 
 export const testAction = event => ({
