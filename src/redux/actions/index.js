@@ -19,3 +19,13 @@ export const testAction = event => ({
   type: ACTION_TYPES.PRINT_TEST_ACTION,
   payload: event
 });
+
+export const getCategories = categories => ({
+  type: ACTION_TYPES.GET_CATEGORIES,
+  payload: categories
+});
+
+export const setCategories = categories => ({
+  type: ACTION_TYPES.SET_CATEGORIES,
+  payload: categories
+});
