@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { inputChange, pressButton } from './../redux/actions';
+import { inputChange, setSearchKeyword } from './../redux/actions';
 import { SearchInput } from './SearchInput';
 import { CategoriesList } from './CategoriesList';
 
@@ -11,7 +11,12 @@ import Button from './Button';
 
 class App extends Component {
   render() {
-    const { pressButton, results, searchInput, categories } = this.props;
+    const { 
+            searchInput, 
+            allCategories, 
+            selectedCategories,
+            setSearchKeyword,
+          } = this.props;
 
     return (
       <div className="App">
@@ -26,10 +31,9 @@ class App extends Component {
           className='hello'
           aria-label='hello'
           content='hello'
-          handleClick={ () => pressButton(searchInput) }
+          handleClick={ () => setSearchKeyword(searchInput) }
         />
-        <CategoriesList categories={categories} />
-        { results ? results.map(result => <li key={result.recipe.label}>{result.recipe.label}</li>) : null }
+        <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
       </div>
       
     );
@@ -38,10 +42,12 @@ class App extends Component {
 
 const connectConfig = connect(state => ({
   searchInput: state.searchInput,
-  categories: state.categories.items,
+  searchKeyword: state.categories.searchKeyword,
+  allCategories: state.categories.items,
+  selectedCategories: state.categories.items ? state.categories.items.filter(category => category.items.name.includes(state.categories.searchKeyword)) : null
 }), {
   inputChange,
-  pressButton
+  setSearchKeyword,
 });
 
 
