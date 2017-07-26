@@ -5,4 +5,4 @@ export const Category = (props) => (
     <img src={props.image} alt="categoryImage" />
     <div>{props.name}</div>
   </div>
-)
+);
