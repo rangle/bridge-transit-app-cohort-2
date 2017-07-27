@@ -10,8 +10,8 @@ export const getCategoryEpic = action$ =>
   action$.ofType(ACTION_TYPES.GET_CATEGORIES)
     .mergeMap(action =>
       Observable.ajax({url: BASE_ENDPOINT, crossDomain: true})
-        .map(({ categories }) => ({
+        .map(({ response }) => ({
           type: ACTION_TYPES.SET_CATEGORIES,
-          payload: categories,
+          payload: response,
         }))
     );
