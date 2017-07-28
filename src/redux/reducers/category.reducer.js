@@ -13,7 +13,7 @@ export const categoryReducer = (state = DEFAULT_STATE, action) => {
       return Object.assign({}, state, {
         isFetching: false,
         didInvalidate: true,
-        categories: action.payload
+        categories: action.payload.categories
       })
     case ACTION_TYPES.SET_SEARCH_KEYWORD:
       return Object.assign({}, state, {
