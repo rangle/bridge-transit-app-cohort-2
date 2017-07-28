@@ -19,6 +19,7 @@ const epicMiddleware = createEpicMiddleware(rootEpic);
 
 const store = createStore(
   rootReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   applyMiddleware(loggerMiddleware,epicMiddleware),
 );
 
