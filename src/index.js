@@ -10,7 +10,6 @@ import { createEpicMiddleware } from 'redux-observable';
 import rootEpic from './redux/epics'
 import rootReducer from './redux/reducers';
 import App from './components/App';
-import Foo from './components/Foo';
 import { CategoryPage } from './components/CategoryPage';
 import { CategoriesList } from './components/CategoriesList';
 import './index.css';

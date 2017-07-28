@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { inputChange, setSearchKeyword, getCategories } from './../redux/actions';
 import { SearchInput } from './SearchInput';
-import { CategoriesList } from './CategoriesList';
 import Button from './Button';
 
 import '../App.css';
@@ -12,8 +11,6 @@ class App extends Component {
   render() {
     const {
       searchInput,
-      allCategories,
-      selectedCategories,
       setSearchKeyword,
       getCategories,
     } = this.props;
