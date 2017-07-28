@@ -27,6 +27,7 @@ class App extends Component {
         <div>
           <Link to="/category/2">Category 2</Link> | <Link to="/">Home</Link>
         </div>
+<<<<<<< 41995ee504528f8743aada5dd397c4c8899766eb
         <SearchInput {...this.props} label="Search Events"/>
           <Button
             className='hello'
@@ -35,6 +36,17 @@ class App extends Component {
             handleClick={ () => setSearchKeyword(searchInput) }
           />
          <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
+=======
+
+        <SearchInput {...this.props} label="Search Events"/>
+        <Button
+          className='hello'
+          aria-label='hello'
+          content='hello'
+          handleClick={ () => setSearchKeyword(searchInput) }
+        />
+        {childrenWithProps}
+>>>>>>> add category routing
       </div>
     );
   }
