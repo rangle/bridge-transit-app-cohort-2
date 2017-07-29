@@ -1,6 +1,6 @@
 import { ACTION_TYPES } from '../../constants/ActionTypes';
 
-const INITIAL_VALUES = {
+export const INITIAL_VALUES = {
   searchInput: '',
 };
 
