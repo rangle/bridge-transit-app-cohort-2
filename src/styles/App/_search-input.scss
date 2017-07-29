@@ -1,0 +1,49 @@
+.search-input-container {
+   padding: 50px; 
+   width: 40%;
+   margin: 0 auto;
+   background-color: #fff ; 
+   position: relative;
+   top: 50px;
+   display: flex;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    position: relative;
+    z-index: 200;
+}
+
+.Search-Events {
+  width: 80%;
+}
+
+input.search-input {
+  display: block;
+  border: none;
+  border-bottom: 2px solid #2786a2;
+  padding: 6.5px 2px;
+  position: relative;
+  top: 1px;
+  width: calc(100% - 30px);
+  font-size: 15px;
+  margin-right: 30px;
+  font-family: 'Montserrat', sans-serif;
+  color: rgba(76,89,115,1);
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.is-primary {
+  background: #2786a2;
+  color: #fff;
+  font-family: 'helvetica', sans-serif;
+  padding: 7px 20px;
+  border: 1px solid #fff;;
+  font-size: 15px;
+  /* text-transform: uppercase; */
+  border-radius: 40px;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
