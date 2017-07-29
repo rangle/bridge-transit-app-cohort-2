@@ -11,8 +11,7 @@ import rootEpic from './redux/epics'
 import rootReducer from './redux/reducers';
 import App from './components/App';
 import Foo from './components/Foo';
-
-import './index.css';
+import './styles/css/index.css';
 
 const loggerMiddleware = createLogger();
 const epicMiddleware = createEpicMiddleware(rootEpic);
