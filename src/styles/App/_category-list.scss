@@ -2,48 +2,48 @@ $dark-blue: #34495E;
 $light-grey: #eee;
 
 .Categories-list {
+  align-content: space-around;
+  background: $light-grey;
+  color: $dark-blue;
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
-  align-content: space-around;
-  width: 100%;
-  margin: 0 auto;
-  padding: 100px 70px;
-  background: $light-grey;
   font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  color: $dark-blue;
+  justify-content: space-around;
+  margin: 0 auto;
+  min-height: 35vh;
+  padding: 100px 70px;
   position: relative;
-    z-index: 100;
-    min-height: 35vh;
+  text-transform: uppercase;
+  width: 100%;
+  z-index: 100;
 }
 
 .Category {
-  width: calc(20% - 30px);
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
   margin-bottom: 40px;
   padding: 20px;
-  background: #fff;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
-  border-radius: 5px;
+  width: calc(20% - 30px);
 }
 
 .asset-container {
+  align-items: center;
+  background: linear-gradient(to top right, rgba(39, 134, 162,1) 50%, rgba(63,188,155, 0.8));
   border-radius: 50%;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  margin: 20px auto;
   position: relative;
   width: 80px;
-  height: 80px;
-  margin: 20px auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(to top right, rgba(39, 134, 162,1) 50%, rgba(63,188,155, 0.8));
 }
 
 .asset {
-  width: 100%;
-  position: relative;
   color: white;
   font-size: 50px;
+  position: relative;
+  width: 100%;
 }
 
 .asset.fa-cubes {
