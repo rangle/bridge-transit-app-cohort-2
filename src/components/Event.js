@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const Items = event => {
+export const Event = event => {
   return(
     <li className='item-card'>
       <a href={event.href}>
