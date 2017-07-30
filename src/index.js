@@ -27,7 +27,7 @@ const history = syncHistoryWithStore(browserHistory, store);
 
 const ReduxApp = () => (
   <Provider store={store}>
-    <Router history={ browserHistory }>
+    <Router history={ history }>
       <Route path="/" component={ App }>
         <IndexRoute component={ CategoriesList } />
         <Route path="/category/:categoryID" component={ CategoryPage }/>
