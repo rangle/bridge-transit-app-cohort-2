@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import { Link } from 'react-router';
 import { inputChange, setSearchKeyword, getCategories } from './../redux/actions';
 import { SearchInput } from './SearchInput';
-import { CategoriesList } from './CategoriesList';
 import Button from './Button';
 
 class App extends Component {
@@ -14,10 +13,11 @@ class App extends Component {
   render() {
     const {
       searchInput,
-      allCategories,
-      selectedCategories,
       setSearchKeyword,
     } = this.props;
+
+    // this connects props to children (for example, CategoriesList)
+    const childrenWithProps = React.cloneElement(this.props.children, {...this.props});
 
     return (
       <div className="App helvetica">
@@ -33,7 +33,7 @@ class App extends Component {
             />
           </div>
           </div>
-            <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
+            {childrenWithProps}
       </div>
     );
   }

@@ -4,14 +4,14 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { createLogger } from 'redux-logger';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux'
 import { createEpicMiddleware } from 'redux-observable';
 import rootEpic from './redux/epics'
 import rootReducer from './redux/reducers';
-import App from './components/App';
-import Foo from './components/Foo';
 import './styles/css/index.css';
+import { CategoryPage } from './components/CategoryPage';
+import { CategoriesList } from './components/CategoriesList';
 
 const loggerMiddleware = createLogger();
 const epicMiddleware = createEpicMiddleware(rootEpic);
@@ -27,8 +27,10 @@ const history = syncHistoryWithStore(browserHistory, store);
 const ReduxApp = () => (
   <Provider store={store}>
     <Router history={history}>
-      <Route path="/" component={App}/>
-      <Route path="/foo" component={Foo}/>
+      <Route path="/" component={App}>
+        <IndexRoute component={ CategoriesList } />
+        <Route path="/category/:categoryID" component={ CategoryPage }/>
+      </Route>
     </Router>
   </Provider>
 );
