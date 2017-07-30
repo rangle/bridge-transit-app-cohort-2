@@ -10,6 +10,6 @@ export const SearchInput = ({label, searchInput, inputChange}) => { return (
     // specific input instances)
 
     <div className={`${label.replace(/\s/g,'-')} search-input`}>
-       <span>{label}</span>: <input type="search" value={searchInput} onChange={ev => inputChange(ev.target.value)} /> 
+       <input className="search-input" type="search" value={searchInput} placeholder={label} onChange={ev => inputChange(ev.target.value)} /> 
     </div>
 )};

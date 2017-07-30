@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.App {
+  font-family: 'helvetica neue', helvetica, sans-serif;
+  text-align: center;
+}
+
+.App-header {
+  background: url(../../assets/filip-mroz-177565.jpg) bottom;
+  background-size: cover; 
+  padding-bottom: 0;
+  padding-top: 30vh;
+}
+
+.App-header:after {
+  background: linear-gradient(to top right, rgba(76,89,115,0.8)40%, rgba(63,188,155, 0.8));
+  bottom: 10px;
+  content:"";
+  height:100%;
+  left:0;
+  position: absolute;
+  top:0;
+  width:100%;
+}
+
+.header-catch-phrase {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 40px;
+  position: relative;
+  z-index: 200;
+}
