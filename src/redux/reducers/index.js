@@ -5,8 +5,8 @@ import { searchInput } from './search.reducer';
 import { categoryReducer } from './category.reducer';
 
 export default combineReducers({
-  category: categoryReducer,
   searchInput,
+  category: categoryReducer,
   events: eventsReducer,
   routing: routerReducer,
 });
