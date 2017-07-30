@@ -9,8 +9,8 @@ body {
   text-align: center; }
 
 .App-header {
+  background: url(../../assets/filip-mroz-177565.jpg) bottom;
   background-size: cover;
-  background: url(../../assets/matt-lee-19500.jpg) bottom;
   padding-bottom: 0;
   padding-top: 30vh; }
 
