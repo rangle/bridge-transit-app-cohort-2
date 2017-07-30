@@ -8,7 +8,7 @@ export const CategoriesList = (props) => {
   return (
     <div className="Categories-list"> 
       {
-        categories.map(category => <Category name={category.name} image={category.image}/>) 
+        categories.map(category => <Category key={category.name} name={category.name}/>) 
       }
     </div>
   )
