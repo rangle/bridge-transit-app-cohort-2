@@ -11,5 +11,5 @@ export const CategoriesList = (props) => {
         categories.map(category => <Category key={category.name} name={category.name}/>) 
       }
     </div>
-  )
+  );
 };
