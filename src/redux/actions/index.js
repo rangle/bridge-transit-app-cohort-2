@@ -29,3 +29,4 @@ export const setCategories = categories => ({
   type: ACTION_TYPES.SET_CATEGORIES,
   payload: categories
 });
+
