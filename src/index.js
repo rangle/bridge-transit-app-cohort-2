@@ -9,9 +9,11 @@ import { syncHistoryWithStore } from 'react-router-redux'
 import { createEpicMiddleware } from 'redux-observable';
 import rootEpic from './redux/epics'
 import rootReducer from './redux/reducers';
-import './styles/css/index.css';
+import App from './components/App';
 import { CategoryPage } from './components/CategoryPage';
 import { CategoriesList } from './components/CategoriesList';
+import './styles/css/index.css';
+
 
 const loggerMiddleware = createLogger();
 const epicMiddleware = createEpicMiddleware(rootEpic);
