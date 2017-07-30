@@ -5,8 +5,6 @@ import { inputChange, setSearchKeyword, getCategories } from './../redux/actions
 import { SearchInput } from './SearchInput';
 import Button from './Button';
 
-import '../App.css';
-
 class App extends Component {
   componentDidMount() {
     this.props.getCategories();
@@ -23,19 +21,22 @@ class App extends Component {
 
     return (
       <div className="App">
-
         <div>
           <Link to="/category/2">Category 2</Link> | <Link to="/">Home</Link>
         </div>
-
-        <SearchInput {...this.props} label="Search Events"/>
-        <Button
-          className='hello'
-          aria-label='hello'
-          content='hello'
-          handleClick={ () => setSearchKeyword(searchInput) }
-        />
-        {childrenWithProps}
+        <div className="App-header">
+          <h1 className="header-catch-phrase">Never miss the next event</h1>
+          <div className="search-input-container">
+          <SearchInput {...this.props} label="Search Events"/>
+            <Button
+              className='button is-primary is-large'
+              aria-label='search button'
+              content='Search'
+              handleClick={ () => setSearchKeyword(searchInput) }
+            />
+          </div>
+          </div>
+            {childrenWithProps}
       </div>
     );
   }
@@ -45,7 +46,7 @@ const connectConfig = connect(state => ({
   searchInput: state.searchInput,
   searchKeyword: state.category.searchKeyword,
   allCategories: state.category.categories,
-  selectedCategories: state.category.categories ? state.category.categories.filter(category => category.name.includes(state.category.searchKeyword)) : null,
+  selectedCategories: state.category.categories ? state.category.categories.filter(category => category.name.toLowerCase().includes(state.category.searchKeyword.toLowerCase())) : null,
 }), {
   inputChange,
   setSearchKeyword,

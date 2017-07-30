@@ -12,7 +12,8 @@ import rootReducer from './redux/reducers';
 import App from './components/App';
 import { CategoryPage } from './components/CategoryPage';
 import { CategoriesList } from './components/CategoriesList';
-import './index.css';
+import './styles/css/index.css';
+
 
 const loggerMiddleware = createLogger();
 const epicMiddleware = createEpicMiddleware(rootEpic);

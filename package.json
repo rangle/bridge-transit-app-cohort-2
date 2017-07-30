@@ -4,9 +4,11 @@
   "private": true,
   "dependencies": {
     "bulma": "^0.4.4",
+    "concurrently": "^3.5.0",
     "enzyme": "^2.9.1",
     "express": "^4.15.3",
     "helmet": "^3.6.1",
+    "node-sass-chokidar": "0.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.5",
@@ -25,12 +27,16 @@
   "scripts": {
     "postinstall": "npm run build",
     "server": "node server/index.js",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start": "concurrently \"npm run watch-css\" \"react-scripts start\"",
+    "build": "npm run build-css && react-scripts build",
     "lint": "eslint src",
     "pretest": "npm run lint",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "test": "npm run build-css && react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "build-watch": "npm run build-css --watch --recursive",
+    "sass": "sass --watch src/styles/scss:src/styles/css"
   },
   "devDependencies": {
     "eslint": "^4.2.0",
