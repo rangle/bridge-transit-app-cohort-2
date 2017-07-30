@@ -9,6 +9,10 @@ import Button from './Button';
 import '../App.css';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getCategories();
+  }
+  
   render() {
     const {
       searchInput,
@@ -28,11 +32,6 @@ class App extends Component {
             handleClick={ () => setSearchKeyword(searchInput) }
           />
           <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
-            <button
-              onClick={ () => getCategories() }
-            >
-              Fetch Categories
-            </button>
       </div>
     );
   }
