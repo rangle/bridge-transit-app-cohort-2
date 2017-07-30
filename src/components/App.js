@@ -43,7 +43,7 @@ const connectConfig = connect(state => ({
   searchInput: state.searchInput,
   searchKeyword: state.category.searchKeyword,
   allCategories: state.category.categories,
-  selectedCategories: state.category.categories ? state.category.categories.filter(category => category.name.includes(state.category.searchKeyword)) : null,
+  selectedCategories: state.category.categories ? state.category.categories.filter(category => category.name.toLowerCase().includes(state.category.searchKeyword.toLowerCase())) : null,
 }), {
   inputChange,
   setSearchKeyword,
