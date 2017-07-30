@@ -7,13 +7,16 @@ import { CategoriesList } from './CategoriesList';
 import Button from './Button';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getCategories();
+  }
+
   render() {
     const {
       searchInput,
       allCategories,
       selectedCategories,
       setSearchKeyword,
-      getCategories,
     } = this.props;
 
     return (
@@ -28,14 +31,9 @@ class App extends Component {
               content='Search'
               handleClick={ () => setSearchKeyword(searchInput) }
             />
-            <button
-              onClick={ () => getCategories() }
-            >
-              Fetch Categories
-            </button>
+           </div>
           </div>
-          </div>
-            <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
+          <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
       </div>
     );
   }
