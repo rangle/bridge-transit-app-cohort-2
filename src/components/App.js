@@ -20,7 +20,10 @@ class App extends Component {
     const childrenWithProps = React.cloneElement(this.props.children, {...this.props});
 
     return (
-      <div className="App helvetica">
+      <div className="App">
+        <div>
+          <Link to="/category/2">Category 2</Link> | <Link to="/">Home</Link>
+        </div>
         <div className="App-header">
           <h1 className="header-catch-phrase">Never miss the next event</h1>
           <div className="search-input-container">
