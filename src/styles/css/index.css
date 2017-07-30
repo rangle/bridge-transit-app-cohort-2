@@ -92,8 +92,8 @@ body {
   width: 80%; }
 
 input.search-input {
-  border-bottom: 2px solid #2786a2;
   border: none;
+  border-bottom: 2px solid #2786a2;
   color: #4c5973;
   display: block;
   font-family: 'Montserrat', sans-serif;

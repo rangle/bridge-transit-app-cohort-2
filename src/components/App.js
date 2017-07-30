@@ -31,11 +31,6 @@ class App extends Component {
               content='Search'
               handleClick={ () => setSearchKeyword(searchInput) }
             />
-            <button
-              onClick={ () => getCategories() }
-            >
-              Fetch Categories
-            </button>
           </div>
           </div>
             <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
