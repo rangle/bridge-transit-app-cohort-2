@@ -12,14 +12,13 @@ class App extends Component {
   componentDidMount() {
     this.props.getCategories();
   }
-  
+
   render() {
     const {
       searchInput,
       allCategories,
       selectedCategories,
       setSearchKeyword,
-      getCategories,
     } = this.props;
 
     return (
