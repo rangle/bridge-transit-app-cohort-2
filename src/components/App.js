@@ -8,11 +8,14 @@ import Button from './Button';
 import '../App.css';
 
 class App extends Component {
+  componentDidMount() {
+    this.props.getCategories();
+  }
+
   render() {
     const {
       searchInput,
       setSearchKeyword,
-      getCategories,
     } = this.props;
 
     // this connects props to children (for example, CategoriesList)
@@ -24,23 +27,14 @@ class App extends Component {
         <div>
           <Link to="/category/2">Category 2</Link> | <Link to="/">Home</Link>
         </div>
-
-        <div>
-          <SearchInput {...this.props} label="Search Events"/>
+        <SearchInput {...this.props} label="Search Events"/>
           <Button
-          className='hello'
-          aria-label='hello'
-          content='hello'
-          handleClick={ () => setSearchKeyword(searchInput) }
+            className='hello'
+            aria-label='hello'
+            content='hello'
+            handleClick={ () => setSearchKeyword(searchInput) }
           />
-          <button
-          onClick={ () => getCategories() }
-          >
-          Fetch Categories
-          </button>
-          { childrenWithProps }
-        </div>
-
+         <CategoriesList allCategories={allCategories} selectedCategories={selectedCategories} />
       </div>
     );
   }
