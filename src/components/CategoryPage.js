@@ -1,4 +1,5 @@
 import React from 'react';
+import { EventsList } from './EventsList';
 
 export const CategoryPage = (props) => (
   <div>
@@ -8,16 +9,7 @@ export const CategoryPage = (props) => (
       Fetch Events
     </button>
     {props.events 
-      ? props.events.map((event) => {
-        return (
-          <div className="event">
-            <h3>Name: {event.name.text}</h3>
-            <h4>Date: {event.start.utc}</h4>
-            <div>Description: {event.description.text}</div>
-            <a href={event.url}>Register now: {event.url}</a>
-          </div>
-        )
-      })
+      ? <EventsList events={props.events} />
       : null
     }
   </div>
