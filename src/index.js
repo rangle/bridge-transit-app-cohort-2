@@ -33,7 +33,6 @@ const ReduxApp = () => (
       <Route path="/" component={App}>
         <IndexRoute component={ CategoriesList } />
         <Route path="/category/:categoryID" component={ CategoryPage }/>
-        <Route path="/maps" component={ Address } />
       </Route>
     </Router>
   </Provider>
