@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Link } from 'react-router';
 import { inputChange, setSearchKeyword, getCategories, getEvents, getAddress, setAddress,selectAddress, addressInputChange } from './../redux/actions';
 import { SearchInput } from './SearchInput';
 import { Address } from './Address';

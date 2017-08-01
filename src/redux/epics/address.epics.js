@@ -1,13 +1,6 @@
 import { ACTION_TYPES } from '../../constants/ActionTypes';
-import { Observable } from 'rxjs';
+import { PLACES_KEY } from '../../constants/keys';
 import 'rxjs/add/operator/mergeMap';
-
-
-//DIRECTIONS KEY
-const GOOGLEMAPS_API_KEY = 'AIzaSyC4sITGIQEKBi1ejAZxazvwZlrk1pi7OeA';
-
-//GOOGLE PLACES KEY
-const PLACES_KEY = 'AIzaSyDOioGMJMKVJ-dc3SlXb8YYHzTNJEQ2SpM';
 
 //Coordinates of Toronto point
 const TORONTO_COORDS = '43.655336,-79.402816';
@@ -21,6 +14,7 @@ const BASE_ENDPOINT = `https://maps.googleapis.com/maps/api/place/textsearch/jso
 // https://cors-anywhere.herokuapp.com/ CORS Everywhere 
 const cors_api_url = 'https://cors-anywhere.herokuapp.com/';
 
+// include this function def for development
 const doCORSRequest = (options) => {
     return new Promise((resolve, reject) => {
         var x = new XMLHttpRequest();
@@ -40,8 +34,10 @@ const doCORSRequest = (options) => {
 
 export const getAddressEpic = action$ =>
     action$.ofType(ACTION_TYPES.GET_ADDRESS)
-        .debounceTime(500)
-        .mergeMap(action => doCORSRequest({method: 'GET', url: `${BASE_ENDPOINT}&query=${action.payload.replace(/\s/g, '+')}`})
+        .debounceTime(400)
+        .mergeMap(action => 
+    /* use this for development */ doCORSRequest({method: 'GET', url: `${BASE_ENDPOINT}&query=${action.payload.replace(/\s/g, '+')}`})
+    /* use this for production */ /* fetch(`${BASE_ENDPOINT}&query=${action.payload.replace(/\s/g, '+')}`) */
                             .then(res => JSON.parse(res), error => console.log(error)))
         .map(response => ({
                 type: ACTION_TYPES.SET_ADDRESS,
