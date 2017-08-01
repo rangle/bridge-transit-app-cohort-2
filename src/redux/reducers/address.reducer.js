@@ -63,7 +63,7 @@ const DEFAULT_STATE = {
 
 export const addressReducer = (state = DEFAULT_STATE, {type, payload}) => {
     switch(type) {
-        case ACTION_TYPES.SET_ADDRESS:
+        case ACTION_TYPES.SET_ADDRESSES:
             return {...state, addresses: payload};
         case ACTION_TYPES.SELECT_ADDRESS:
             return {...state, selectedAddress: payload.addressObj, addresses: [], addressSearchInput: payload.addressString};

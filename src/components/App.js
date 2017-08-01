@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { inputChange, setSearchKeyword, getCategories, getEvents, getAddress, setAddress, selectAddress, saveAddress, addressInputChange, showAddressWindow, hideAddressWindow } from './../redux/actions';
+import { inputChange, setSearchKeyword, getCategories, getEvents, setAddresses, selectAddress, saveAddress, addressInputChange, showAddressWindow, hideAddressWindow } from './../redux/actions';
 import { SearchInput } from './SearchInput';
 import { Address } from './Address';
 import { AddressWindow } from './AddressWindow';
@@ -62,8 +62,7 @@ const connectConfig = connect(state => ({
   setSearchKeyword,
   getCategories,
   getEvents,
-  getAddress,
-  setAddress,
+  setAddresses,
   selectAddress,
   saveAddress,
   addressInputChange,

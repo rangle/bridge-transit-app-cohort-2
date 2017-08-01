@@ -39,13 +39,9 @@ export const setEvents = events => ({
   type: ACTION_TYPES.SET_EVENTS,
   payload: events
 });
-export const getAddress = addresses => ({
-  type: ACTION_TYPES.GET_ADDRESS,
-  payload: addresses
-});
 
-export const setAddress = addresses => ({
-  type: ACTION_TYPES.SET_ADDRESS,
+export const setAddresses = addresses => ({
+  type: ACTION_TYPES.SET_ADDRESSES,
   payload: addresses
 });
 

@@ -8,10 +8,7 @@ export const AddressWindow = props => (
         <input type="text" 
                placeholder="enter your address"
                value={props.addressSearchInput} 
-               onChange={ev => {
-                   props.addressInputChange(ev.target.value); 
-                   props.getAddress(props.addressSearchInput);
-               }}
+               onChange={ev => props.addressInputChange(ev.target.value)}
         /> 
         <div className="address-results">
             { props.addresses.map(address => (
