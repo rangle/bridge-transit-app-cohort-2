@@ -15,13 +15,7 @@ class App extends Component {
   render() {
     const {
       searchInput,
-      allCategories,
-      selectedCategories,
-      chosenCategory,
-      events,
       setSearchKeyword,
-      getCategories,
-      getEvents,
     } = this.props;
 
     // this connects props to children (for example, CategoriesList)
