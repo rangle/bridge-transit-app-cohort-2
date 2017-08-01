@@ -1,6 +1,6 @@
 import { ACTION_TYPES } from '../../constants/ActionTypes';
 
-const DEFAULT_STATE = '';
+export const DEFAULT_STATE = '';
 
 export const searchInput = (state = DEFAULT_STATE, {type, payload}) => {
   switch(type) {
