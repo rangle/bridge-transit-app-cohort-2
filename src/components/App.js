@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import { inputChange, setSearchKeyword, getCategories, getEvents } from './../redux/actions';
+import { inputChange, setSearchKeyword, getCategories, getEvents, getAddress, selectAddress } from './../redux/actions';
 import { SearchInput } from './SearchInput';
 import Button from './Button';
 
@@ -21,9 +21,6 @@ class App extends Component {
 
     return (
       <div className="App">
-        <div>
-          <Link to="/category/2">Category 2</Link> | <Link to="/">Home</Link>
-        </div>
         <div className="App-header">
           <h1 className="header-catch-phrase">Never miss the next event</h1>
           <div className="search-input-container">
@@ -52,11 +49,15 @@ const connectConfig = connect(state => ({
     : null,
   chosenCategory: state.category.chosenCategory,
   events: state.events.events,
+  addresses: state.addresses,
+  selectedAddress: state.selectedAddress
 }), {
   inputChange,
   setSearchKeyword,
   getCategories,
   getEvents,
+  getAddress,
+  selectAddress
 });
 
 
