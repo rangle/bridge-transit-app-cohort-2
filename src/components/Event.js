@@ -5,7 +5,6 @@ export const Event = event => {
     <li className='item-card'>
       <a href={event.url}>
         <div className='item-container'>
-{/*          <img src={event.logo.url}/>*/}
           <div className='item-info'>
             <p className='item-info--time'>{event.start.local}</p>
             <p className='item-info--location'>{event.start.timezone}</p>

@@ -1,8 +1,7 @@
 import { ACTION_TYPES } from '../../constants/ActionTypes';
+import { EVENTBRITE_API_KEY } from '../../constants/keys';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/mergeMap';
-
-const EVENTBRITE_API_KEY = 'QWZWM6CDIXJRAOHDGJ7Y';
 
 const BASE_ENDPOINT = `https://www.eventbriteapi.com/v3/events/search/?token=${EVENTBRITE_API_KEY}&location.address=toronto&categories=`;
 

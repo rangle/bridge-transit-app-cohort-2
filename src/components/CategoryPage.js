@@ -3,7 +3,6 @@ import { EventsList } from './EventsList';
 
 export const CategoryPage = (props) => (
   <div>
-    {console.log('props.chosenCategory in CategoryPage component: ', props.chosenCategory)}
     <h2>{props.chosenCategory.name} Events near Toronto, Ontario</h2>
     <button onClick={ () => props.getEvents() }>
       Fetch Events
