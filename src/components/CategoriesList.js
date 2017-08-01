@@ -8,8 +8,8 @@ export const CategoriesList = (props) => {
   return (
     <div className="Categories-list"> 
       {
-        categories.map(category => <Category key={category.name} name={category.name}/>) 
+        categories.map(category => <Category key={category.name} name={category.name} id={category.id} />) 
       }
     </div>
-  )
+  );
 };
