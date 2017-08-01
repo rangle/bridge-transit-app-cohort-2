@@ -114,3 +114,7 @@ input.search-input {
   font-size: 15px;
   padding: 7px 20px;
   text-align: center; }
+
+  button.fetch-events {
+    margin-top: 150px; 
+    margin-bottom: 50px; }
