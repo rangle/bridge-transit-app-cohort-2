@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router';
 import { inputChange, setSearchKeyword, getCategories, getEvents } from './../redux/actions';
 import { SearchInput } from './SearchInput';
-import { CategoriesList } from './CategoriesList';
-import { CategoryPage } from './CategoryPage';
 import Button from './Button';
 
 class App extends Component {
