@@ -51,5 +51,10 @@ export const setAddress = addresses => ({
 
 export const selectAddress = address => ({
   type: ACTION_TYPES.SELECT_ADDRESS,
-  payload: address
+  payload: { addressObj: address, addressString: address.formatted_address }
+});
+
+export const addressInputChange = value => ({
+  type: ACTION_TYPES.ADDRESS_INPUT_CHANGE,
+  payload: value
 });

@@ -9,9 +9,14 @@ const GOOGLEMAPS_API_KEY = 'AIzaSyC4sITGIQEKBi1ejAZxazvwZlrk1pi7OeA';
 //GOOGLE PLACES KEY
 const PLACES_KEY = 'AIzaSyDOioGMJMKVJ-dc3SlXb8YYHzTNJEQ2SpM';
 
-//PLACES ENDPOINT
-const BASE_ENDPOINT = `https://maps.googleapis.com/maps/api/place/textsearch/json?query=123+main+street&location=42.3675294,-71.186966&radius=10000&key=${PLACES_KEY}`;
+//Coordinates of Toronto point
+const TORONTO_COORDS = '43.655336,-79.402816';
 
+//Search within this many meters of Toronto point
+const RADIUS = '30000';
+
+//PLACES ENDPOINT
+const BASE_ENDPOINT = `https://maps.googleapis.com/maps/api/place/textsearch/json?location=${TORONTO_COORDS}&radius=${RADIUS}&key=${PLACES_KEY}`;
 
 // https://cors-anywhere.herokuapp.com/ CORS Everywhere 
 const cors_api_url = 'https://cors-anywhere.herokuapp.com/';
@@ -35,7 +40,8 @@ const doCORSRequest = (options) => {
 
 export const getAddressEpic = action$ =>
     action$.ofType(ACTION_TYPES.GET_ADDRESS)
-        .mergeMap(action => doCORSRequest({method: 'GET', url: `${BASE_ENDPOINT}`})
+        .debounceTime(500)
+        .mergeMap(action => doCORSRequest({method: 'GET', url: `${BASE_ENDPOINT}&query=${action.payload.replace(/\s/g, '+')}`})
                             .then(res => JSON.parse(res), error => console.log(error)))
         .map(response => ({
                 type: ACTION_TYPES.SET_ADDRESS,
