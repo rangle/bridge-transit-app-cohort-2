@@ -1,25 +1,14 @@
 import React from 'react';
-import { AddressListItem } from './AddressListItem';
 
 export const Address = props => (
-    <div className="address-box">
-        <h4>Location:</h4>
-        <input type="text" 
-               placeholder="enter your address"
-               value={props.addressSearchInput} 
-               onChange={ev => {
-                   props.addressInputChange(ev.target.value); 
-                   props.getAddress(props.addressSearchInput);
-               }}
-               onBlur={ev => {
-                   props.addressInputChange(props.selectedAddress.formatted_address);
-               }}
-               onFocus={ev => props.addressInputChange('')}
-        /> 
-        <div className="address-results">
-            { props.addresses.map(address => (
-                <AddressListItem address={address} key={address.place_id} {...props} />
-            ))}
-        </div>
+    <div className="address-box" onClick={()=>props.showAddressWindow({
+        addressObj: props.savedAddress, 
+        addressString: props.savedAddress.formatted_address
+    })}>
+        {
+            props.savedAddress.formatted_address.length ?
+            <span><b>Current location:</b> {props.savedAddress.formatted_address}</span>
+            : <b>Set your location</b>
+        }
     </div>
 );

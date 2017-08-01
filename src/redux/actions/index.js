@@ -54,7 +54,22 @@ export const selectAddress = address => ({
   payload: { addressObj: address, addressString: address.formatted_address }
 });
 
+export const saveAddress = address => ({
+  type: ACTION_TYPES.SAVE_ADDRESS,
+  payload: { addressObj: address, addressString: address.formatted_address }
+});
+
 export const addressInputChange = value => ({
   type: ACTION_TYPES.ADDRESS_INPUT_CHANGE,
   payload: value
+});
+
+export const showAddressWindow = address => ({
+  type: ACTION_TYPES.SHOW_ADDRESS_WINDOW,
+  payload: address
+});
+
+export const hideAddressWindow = () => ({
+  type: ACTION_TYPES.HIDE_ADDRESS_WINDOW,
+  payload: ''
 });

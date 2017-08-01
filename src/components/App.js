@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { inputChange, setSearchKeyword, getCategories, getEvents, getAddress, setAddress,selectAddress, addressInputChange } from './../redux/actions';
+import { inputChange, setSearchKeyword, getCategories, getEvents, getAddress, setAddress, selectAddress, saveAddress, addressInputChange, showAddressWindow, hideAddressWindow } from './../redux/actions';
 import { SearchInput } from './SearchInput';
 import { Address } from './Address';
+import { AddressWindow } from './AddressWindow';
 import Button from './Button';
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
 
     return (
       <div className="App">
+        {this.props.displayAddressWindow ? <AddressWindow {...this.props} /> : null}
         <div className="App-header">
           <Address {...this.props} />
           <h1 className="header-catch-phrase">Never miss the next event</h1>
@@ -52,7 +54,9 @@ const connectConfig = connect(state => ({
   events: state.events.events,
   addresses: state.address.addresses,
   selectedAddress: state.address.selectedAddress,
-  addressSearchInput: state.address.addressSearchInput
+  savedAddress: state.address.savedAddress,
+  addressSearchInput: state.address.addressSearchInput,
+  displayAddressWindow: state.address.displayAddressWindow
 }), {
   inputChange,
   setSearchKeyword,
@@ -61,7 +65,10 @@ const connectConfig = connect(state => ({
   getAddress,
   setAddress,
   selectAddress,
-  addressInputChange
+  saveAddress,
+  addressInputChange,
+  showAddressWindow,
+  hideAddressWindow
 });
 
 

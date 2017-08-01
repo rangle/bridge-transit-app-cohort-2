@@ -12,7 +12,6 @@ import rootReducer from './redux/reducers';
 import App from './components/App';
 import { CategoryPage } from './components/CategoryPage';
 import { CategoriesList } from './components/CategoriesList';
-import { Address } from './components/Address';
 import './styles/css/index.css';
 
 
