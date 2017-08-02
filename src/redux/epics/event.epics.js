@@ -11,7 +11,10 @@ export const getEventEpic = (action$, store) => {
       .mergeMap(action =>
         Observable.ajax({
           /*url: `${BASE_ENDPOINT}${store.getState().category.chosenCategory.id}`,*/
-          url: `${BASE_ENDPOINT}${store.getState().routing.locationBeforeTransitions.pathname.replace('/category/', '')}`,
+          url: `${BASE_ENDPOINT}${
+            store.getState().routing.locationBeforeTransitions.pathname
+            .replace('/category/', '')
+          }`,
           crossDomain: true
         })
           .map(({ response }) => ({
