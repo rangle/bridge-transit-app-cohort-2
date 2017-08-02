@@ -31,7 +31,6 @@ const connectConfig = connect(state => ({
     ? state.category.categories.filter(category => 
       category.name.toLowerCase().includes(state.category.searchKeyword.toLowerCase())) 
     : null,
-  chosenCategory: state.category.chosenCategory,
   events: state.events.events,
   addresses: state.address.addresses,
   selectedAddress: state.address.selectedAddress,
