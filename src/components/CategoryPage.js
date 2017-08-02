@@ -9,14 +9,10 @@ export class CategoryPage extends Component {
   render() {
     return (
       <div>
-        {
-          this.props.allCategories.map(category => category.id === this.props.params.categoryID 
+        {this.props.allCategories.map(category => category.id === this.props.params.categoryID 
           ? <h2>{category.name} Events near Toronto, Ontario</h2> 
           : null)
         }
-        <button className="fetch-events" onClick={ () => this.props.getEvents() }>
-          Fetch Events
-        </button>
         {this.props.events 
           ? <EventsList events={this.props.events} />
           : null
