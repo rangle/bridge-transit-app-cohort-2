@@ -19,4 +19,4 @@ export const getEventEpic = (action$, store) =>
             type: ACTION_TYPES.SET_EVENTS,
             payload: response,
           }))
-      )
+      );
