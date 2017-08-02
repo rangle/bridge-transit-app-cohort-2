@@ -50,5 +50,4 @@ const connectConfig = connect(state => ({
   hideAddressWindow
 });
 
-
 export default connectConfig(App);

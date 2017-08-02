@@ -8,7 +8,7 @@ export class CategoryPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="category-page">
         {this.props.allCategories.map(category => category.id === this.props.params.categoryID 
           ? <h2>{category.name} Events near Toronto, Ontario</h2> 
           : null)
