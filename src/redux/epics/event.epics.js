@@ -5,7 +5,7 @@ import 'rxjs/add/operator/mergeMap';
 
 const BASE_ENDPOINT = `https://www.eventbriteapi.com/v3/events/search/?token=${EVENTBRITE_API_KEY}&location.address=toronto&categories=`;
 
-export const getEventEpic = (action$, store) => (
+export const getEventEpic = (action$, store) =>
     action$.ofType(ACTION_TYPES.GET_EVENTS)
       .mergeMap(action =>
         Observable.ajax({
@@ -20,4 +20,3 @@ export const getEventEpic = (action$, store) => (
             payload: response,
           }))
       )
-    )
