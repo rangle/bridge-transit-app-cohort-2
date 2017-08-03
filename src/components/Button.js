@@ -1,6 +1,6 @@
 import React from 'react';
 
- const Button = ({ className, ariaLabel, content, handleClick }) => {
+export const Button = ({ className, ariaLabel, content, handleClick }) => {
 
   const handleOnClick = () => {
     handleClick()
@@ -15,6 +15,4 @@ import React from 'react';
       { content ? content : null }
       </button>
     );
-  }
-
-export default Button;
+  };

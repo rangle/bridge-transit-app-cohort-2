@@ -11,9 +11,8 @@ import rootEpic from './redux/epics'
 import rootReducer from './redux/reducers';
 import App from './components/App';
 import { CategoryPage } from './components/CategoryPage';
-import { CategoriesList } from './components/CategoriesList';
+import { Home } from './components/Home';
 import './styles/css/index.css';
-
 
 const loggerMiddleware = createLogger();
 const epicMiddleware = createEpicMiddleware(rootEpic);
@@ -30,7 +29,7 @@ const ReduxApp = () => (
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <IndexRoute component={ CategoriesList } />
+        <IndexRoute component={ Home } />
         <Route path="/category/:categoryID" component={ CategoryPage }/>
       </Route>
     </Router>
