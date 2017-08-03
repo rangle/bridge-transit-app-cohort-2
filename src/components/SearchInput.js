@@ -1,5 +1,5 @@
 import React from 'react';
-export const SearchInput = ({label, searchInput, inputChange}) => { return (
+export const SearchInput = ({label, searchInput, inputChange, setSearchKeyword}) => { return (
     
     // The search input container contains a span element for the label
     // and a search input element.
@@ -10,6 +10,13 @@ export const SearchInput = ({label, searchInput, inputChange}) => { return (
     // specific input instances)
 
     <div className={`${label.replace(/\s/g,'-')} search-input`}>
-       <input className="search-input" type="search" value={searchInput} placeholder={label} onChange={ev => inputChange(ev.target.value)} /> 
+       <input className="search-input" type="search" value={searchInput} placeholder={label}
+              onChange={ev => inputChange(ev.target.value)}
+              onKeyPress={(event) => {
+                if (event.key === 'Enter') {
+                  setSearchKeyword(searchInput)
+                }
+              }}
+       />
     </div>
 )};
