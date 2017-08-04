@@ -5,14 +5,19 @@ import 'rxjs/add/operator/mergeMap';
 
 const BASE_ENDPOINT = `https://www.eventbriteapi.com/v3/events/search/?token=${EVENTBRITE_API_KEY}&location.address=toronto&categories=`;
 
-export const getEventEpic = (action$, store) =>
+export const returnEventActionOnLocationChange = (action$) =>
+  action$.ofType('@@router/LOCATION_CHANGE')
+    .filter(action => action.payload.pathname.includes('category/'))
+    .map(action => ({
+        type: ACTION_TYPES.GET_EVENTS, 
+        payload: action.payload.pathname.replace('/category/', '')
+      }));
+
+export const getEventEpic = (action$) =>
   action$.ofType(ACTION_TYPES.GET_EVENTS)
     .mergeMap(action =>
       Observable.ajax({
-        url: `${BASE_ENDPOINT}${
-          store.getState().routing.locationBeforeTransitions.pathname
-          .replace('/category/', '')
-        }`,
+        url: `${BASE_ENDPOINT}${action.payload}`,
         crossDomain: true
       })
         .map(({ response }) => ({

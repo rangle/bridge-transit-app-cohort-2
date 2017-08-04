@@ -20,9 +20,8 @@ export const setCategories = categories => ({
   payload: categories
 });
 
-export const getEvents = events => ({
+export const getEvents = () => ({
   type: ACTION_TYPES.GET_EVENTS,
-  payload: events
 });
 
 export const setEvents = events => ({
