@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { inputChange, setSearchKeyword, getCategories, getEvents, setAddresses, selectAddress, saveAddress, addressInputChange, showAddressWindow, hideAddressWindow } from './../redux/actions';
 import { Navigation } from './Navigation';
+import { AddressWindow } from './AddressWindow';
 
 class App extends Component {
   componentDidMount() {
@@ -14,7 +15,8 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navigation />
+        <Navigation {...this.props}/>
+        { this.props.displayAddressWindow ? <AddressWindow {...this.props} /> : null}
         {childrenWithProps}
       </div>
     );
