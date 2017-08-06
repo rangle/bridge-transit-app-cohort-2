@@ -4,12 +4,13 @@ import { Observable } from 'rxjs';
 import 'rxjs/add/operator/mergeMap';
 
 const BASE_ENDPOINT = `https://www.eventbriteapi.com/v3/events/search/?token=${EVENTBRITE_API_KEY}&location.address=toronto&categories=`;
+const reCategoryPath = /^.*\/category\/\d\d\d$/;
 
 export const returnEventActionOnLocationChange = (action$) =>
   action$.ofType('@@router/LOCATION_CHANGE')
-    .filter(action => action.payload.pathname.includes('category/'))
+    .filter(action => reCategoryPath.test(action.payload.pathname))
     .map(action => ({
-        type: ACTION_TYPES.GET_EVENTS, 
+        type: ACTION_TYPES.GET_EVENTS,
         payload: action.payload.pathname.replace('/category/', '')
       }));
 
