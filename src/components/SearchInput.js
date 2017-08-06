@@ -14,7 +14,7 @@ export const SearchInput = ({label, searchInput, inputChange, setSearchKeyword})
               onChange={ev => inputChange(ev.target.value)}
               onKeyPress={(event) => {
                 if (event.key === 'Enter') {
-                  setSearchKeyword(searchInput)
+                  setSearchKeyword(event.target.value)
                 }
               }}
        />
