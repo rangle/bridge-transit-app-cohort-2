@@ -25,6 +25,11 @@ $light-grey: #eee;
   margin-bottom: 40px;
   padding: 20px;
   width: calc(20% - 30px);
+
+  > a {
+    text-decoration: none;
+    color: inherit;
+  }
 }
 
 .asset-container {
