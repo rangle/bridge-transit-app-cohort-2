@@ -30,18 +30,18 @@ export const Category = (props) => {
   const iconRendering = (name) => {
     return iconsList.map( iconObj => iconObj.name === name ? iconObj.icon : null );
   }
-  
-  const categoryID = props.id;  
+
+  const categoryID = props.id;
   const categoryLink = `/category/${categoryID}`;
 
   return (
-    <Link to={categoryLink}>
-      <div className="Category">
+    <div className="Category">
+      <Link to={categoryLink}>
         <div className='asset-container'>
           { iconRendering(props.name) }
         </div>
-      <div>{props.name}</div>
+        <div>{props.name}</div>
+      </Link>
     </div>
-  </Link>
   )
 }
