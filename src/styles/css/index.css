@@ -54,6 +54,9 @@ body {
   margin-bottom: 40px;
   padding: 20px;
   width: calc(20% - 30px); }
+  .Category > a {
+    text-decoration: none;
+    color: inherit; }
 
 .asset-container {
   align-items: center;
