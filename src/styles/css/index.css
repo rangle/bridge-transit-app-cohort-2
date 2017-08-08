@@ -117,3 +117,26 @@ input.search-input {
   font-size: 15px;
   padding: 7px 20px;
   text-align: center; }
+
+.address-results {
+  background-color: #fff;
+  color: #000; }
+
+.address-box {
+  z-index: 201;
+  position: absolute;
+  width: 20%; }
+
+.address-box:hover {
+  cursor: pointer; }
+
+.address-window {
+  position: fixed;
+  width: 50%;
+  height: 50%;
+  z-index: 202;
+  background-color: #000;
+  color: #fff; }
+
+.address-list-item:hover {
+  cursor: pointer; }

@@ -2,14 +2,14 @@ import React from 'react';
 import { EventsList } from './EventsList';
 
 export const CategoryPage = (props) => (
-  <div>
-    <h2>{props.chosenCategory.name} Events near Toronto, Ontario</h2>
-    <button className="fetch-events" onClick={ () => props.getEvents() }>
-      Fetch Events
-    </button>
+  <div className="category-page">
+    {props.allCategories.map(category => category.id === props.params.categoryID 
+      ? <h2>{category.name} Events near Toronto, Ontario</h2> 
+      : null)
+    }
     {props.events 
       ? <EventsList events={props.events} />
       : null
     }
   </div>
-); 
+);

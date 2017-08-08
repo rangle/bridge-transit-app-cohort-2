@@ -27,11 +27,10 @@ const connectConfig = connect(state => ({
   searchInput: state.searchInput,
   searchKeyword: state.category.searchKeyword,
   allCategories: state.category.categories,
-  selectedCategories: state.category.categories 
+  selectedCategories: state.category.categories && state.category.categories.length > 0 
     ? state.category.categories.filter(category => 
       category.name.toLowerCase().includes(state.category.searchKeyword.toLowerCase())) 
     : null,
-  chosenCategory: state.category.chosenCategory,
   events: state.events.events,
   addresses: state.address.addresses,
   selectedAddress: state.address.selectedAddress,
@@ -50,6 +49,5 @@ const connectConfig = connect(state => ({
   showAddressWindow,
   hideAddressWindow
 });
-
 
 export default connectConfig(App);
