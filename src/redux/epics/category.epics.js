@@ -14,4 +14,8 @@ export const getCategoryEpic = action$ =>
           type: ACTION_TYPES.SET_CATEGORIES,
           payload: response,
         }))
+        .catch(error => Observable.of({
+          type: ACTION_TYPES.SET_CATEGORY_INVALIDATE,
+          payload: error
+        })) 
     );
