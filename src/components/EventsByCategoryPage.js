@@ -9,7 +9,7 @@ export const EventsByCategoryPage = (props) => (
     }
     {props.events
       ? <EventsList events={props.events} />
-      : 'Sorry, there seems to be an error. Please try again later.'
+      : props.eventsError ? 'Sorry, there seems to be an error. Please try again later.' : null
     }
   </div>
 );
