@@ -7,7 +7,7 @@ import { getAddressEpic } from './address.epics'
 
 export default combineEpics(
   getCategoryEpic,
-  getEventEpic,
+  getEventsEpic,
   getAddressEpic,
-  returnEventActionOnLocationChange
+  returnEventsActionOnLocationChange
 )
