@@ -72,7 +72,7 @@ export const addressReducer = (state = DEFAULT_STATE, {type, payload}) => {
         case ACTION_TYPES.ADDRESS_INPUT_CHANGE:
             return {...state, addressSearchInput: payload};
         case ACTION_TYPES.SHOW_ADDRESS_WINDOW:
-            return {...state, displayAddressWindow: true, selectedAddress: payload.addressObj, addressSearchInput: payload.addressString};
+            return {...state, displayAddressWindow: true, selectedAddress: payload.addressObj, addressSearchInput: payload.addressString, addresses: []};
         case ACTION_TYPES.HIDE_ADDRESS_WINDOW:
             return {...state, displayAddressWindow: false};
         default:
