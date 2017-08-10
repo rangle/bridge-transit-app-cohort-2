@@ -4,7 +4,7 @@ import { Address } from './Address';
 
 export const Navigation = props => (
     <nav>
-        <a href='home'>home</a>
+        <a href='/'>home</a>
          <Address {...props} />
     </nav>
-); 
+);
