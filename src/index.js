@@ -31,6 +31,7 @@ const ReduxApp = () => (
       <Route path="/" component={App}>
         <IndexRoute component={ Home } />
         <Route path="/category/:categoryID" component={ EventsByCategoryPage }/>
+        <Route path="/event/:eventID" component={ EventDetails }/>
       </Route>
     </Router>
   </Provider>
