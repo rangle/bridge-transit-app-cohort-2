@@ -14,7 +14,7 @@ export const CategoriesList = (props) => {
       {
         categories
           ? categories.map(category => <Category key={category.name} name={category.name} id={category.id} />)
-          : 'Sorry, there seems to be an error. Please try again later.'
+          : props.categoriesError ? 'Sorry, there seems to be an error. Please try again later.' : null
       }
     </div>
   );
