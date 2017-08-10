@@ -13,6 +13,8 @@ export const eventsReducer = (state = DEFAULT_STATE, action) => {
       return {...state, isFetching: true};
     case ACTION_TYPES.SET_EVENTS:
       return {...state, events: action.payload.events, isFetching: false, didInvalidate: false}
+    case ACTION_TYPES.SET_EVENT_INVALIDATE:
+      return {...state, isFetching: false, didInvalidate: true, events: null}
     default:
       return state;
   }
