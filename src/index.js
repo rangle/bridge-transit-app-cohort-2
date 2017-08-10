@@ -10,7 +10,7 @@ import { createEpicMiddleware } from 'redux-observable';
 import rootEpic from './redux/epics'
 import rootReducer from './redux/reducers';
 import App from './components/App';
-import { CategoryPage } from './components/CategoryPage';
+import { EventsByCategoryPage } from './components/EventsByCategoryPage';
 import { Home } from './components/Home';
 import './styles/css/index.css';
 
@@ -30,7 +30,7 @@ const ReduxApp = () => (
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={ Home } />
-        <Route path="/category/:categoryID" component={ CategoryPage }/>
+        <Route path="/category/:categoryID" component={ EventsByCategoryPage }/>
       </Route>
     </Router>
   </Provider>
