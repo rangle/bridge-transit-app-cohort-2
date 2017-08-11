@@ -1,23 +1,23 @@
 import React from 'react';
 import { Button } from './Button';
 
-export const EventDetails = (event) => {
+export const EventDetails = (props) => {
   return(
     <div className='event-details-card'>
       <div className="event-details-container">
-        <h3>{event.name.text}</h3>
-        <img alt="Event" src={event.logo.url} />
+        <h3>{props.event.name.text}</h3>
+        <img alt="Event" src={props.event.logo.url} />
       </div>
       <div className='event-details-container'>
-        <p className='event-details--time'>{event.start.local} to {event.end.local}</p>
-        <p className='event-details--description'>{event.description.text}</p>
+        <p className='event-details--time'>{props.event.start.local} to {props.event.end.local}</p>
+        <p className='event-details--description'>{props.event.description.text}</p>
         <p className='event-details--price'>{
-          event.is_free ? <span>Free</span> :
+          props.event.is_free ? <span>Free</span> :
             <Button
               className='button is-primary is-large'
               content='Buy Tickets'
               aria-label='Buy Tickets'
-              handleClick= { () => window.location.assign(event.url)}
+              handleClick= { () => window.location.assign(props.event.url)}
             />
         } </p>
       </div>
@@ -25,3 +25,4 @@ export const EventDetails = (event) => {
     </div>
   )
 };
+
