@@ -3,7 +3,7 @@ import { Button } from './Button';
 import { SimpleMap } from './SimpleMap';
 
 export const EventDetails = (props) => {
-  return (
+  return(
     <div className='event-details-card'>
       <div className="event-details-container">
         <h3>{props.event.name.text}</h3>
@@ -12,6 +12,8 @@ export const EventDetails = (props) => {
           <img alt="Event" src={props.event.logo.url} />
           : null
         }
+        <h3>{event.name.text}</h3>
+        <img alt="Event" src={event.logo.url} />
       </div>
       <div className='event-details-container'>
         <p className='event-details--time'>{props.event.start.local} to {props.event.end.local}</p>
@@ -37,3 +39,4 @@ export const EventDetails = (props) => {
     </div>
   )
 };
+
