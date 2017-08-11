@@ -1,10 +1,13 @@
 import React from 'react';
 
 export const Address = props => (
-    <div className="address-box" onClick={()=>props.showAddressWindow({
-        addressObj: props.savedAddress, 
-        addressString: props.savedAddress.formatted_address
-    })}>
+    <div 
+        className="address-trigger" 
+        onClick={ () => props.showAddressWindow({
+            addressObj: props.savedAddress, 
+            addressString: props.savedAddress.formatted_address
+        })}
+    >
         {
             props.savedAddress.formatted_address.length ?
             <span><b>Current location:</b> {props.savedAddress.formatted_address}</span>

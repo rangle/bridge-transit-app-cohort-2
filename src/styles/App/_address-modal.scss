@@ -1,0 +1,69 @@
+.address-window {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 400;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.address-trigger {
+  position: relative;
+  z-index: 300;
+}
+
+.address-modal {
+  background: #fff;
+  width: 60%;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  padding: 50px;
+}
+
+.adress-container {
+  display: flex;
+}
+
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #34495E;
+}
+
+.address-modal h2 {
+  color: #34495E;
+}
+
+.address-modal .search-input{
+  margin: 0;
+  width: 100%;
+}
+
+.address-modal .is-primary {
+  margin-top: 20px;
+}
+
+.address-results {
+  list-style-type: none;
+  text-align: left;
+  padding: 0;
+}
+
+.address-list-item {
+  line-height: 25px;
+  color: #34495E;
+}
+
+.fa-home {
+  color: #ccc;
+  padding-right: 5px;
+}
