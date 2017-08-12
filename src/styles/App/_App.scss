@@ -1,9 +1,14 @@
+$light-grey: #eee;
+$dark-blue: #34495E;
+
 * {
   box-sizing: border-box;
 }
 
 body {
   margin: 0;
+  background-color: $light-grey;
+  color: $dark-blue;
 }
 
 .App {
@@ -13,7 +18,7 @@ body {
 
 .App-header {
   background: url(../../assets/filip-mroz-177565.jpg) bottom;
-  background-size: cover; 
+  background-size: cover;
   padding-bottom: 0;
   padding-top: 30vh;
 }
