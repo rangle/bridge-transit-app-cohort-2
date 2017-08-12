@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from './Button';
 import { SearchInput } from './SearchInput';
 import { CategoriesList } from './CategoriesList';
-import { MyMap } from './MyMap';
+import { SimpleMap } from './SimpleMap';
 
 export const Home = props => (
   <div className="home-container">
@@ -19,20 +19,12 @@ export const Home = props => (
       </div> 
     </div>
     <CategoriesList {...props}/>
-    <MyMap
+    <SimpleMap
       containerElement={
-        <div style={{ position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0 }} />
+        <div className='map-container-element' />
       }
       mapElement={
-        <div style={{ position: 'absolute',
-                        top: 0,
-                        left: 0,
-                        right: 0,
-                        bottom: 0 }} />
+        <div className='map-element' />
       }
     />
   </div>
