@@ -15,16 +15,23 @@ export const Event = event => {
     <li className='event-card'>
       <a href={event.url}>
         <div className='event-container'>
-          <div className='event-image'>
-            {event.logo ? <img src={event.logo.url}/> : null}
+          <div className="event-header">
+            <div className='event-image'>
+              {event.logo ? <img src={event.logo.url}/> : <img src='http://madihaevents.com/wp-content/uploads/2016/07/event.png'/>}
+            </div>
+            <span className='event-info--price'>{
+              event.is_free ? <span>Free</span> : <span>Click event for pricing details</span>
+            }</span>
           </div>
           <div className='event-info'>
             <p className='event-info--time'>{`${eventDateWeekday}, ${eventDateDay} ${eventDateMonth} ${eventDateHour}:${eventDateMinute}`}</p>
             <h3 className='event-info--title'>{event.name.text}</h3>
             <p className='event-info--location'>{event.start.timezone}</p>
-            <span className='event-info--price'>{
-              event.is_free ? <span>Free</span> : <span>Click event for pricing details</span>
-            }</span>
+            <div className="event-info--tag">
+              <span>
+                #Festival
+              </span>
+            </div>
           </div>
         </div>
       </a>
