@@ -29,7 +29,7 @@ export const Event = event => {
             <p className='event-info--location'>{event.start.timezone}</p>
             <div className="event-info--tag">
               <span>
-                #Festival
+                #Event
               </span>
             </div>
           </div>
