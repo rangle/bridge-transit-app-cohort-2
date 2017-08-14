@@ -1,14 +1,16 @@
 .address-results {
   background-color:#fff;
-  color:#000; }
+  color:#000;
+}
 
 .address-box {
   z-index:201;
-  position:absolute;
-  width:20%; }
+  width:100%;
+}
 
 .address-box:hover {
-  cursor:pointer; }
+  cursor:pointer;
+}
 
 .address-window {
   position:fixed;
@@ -16,7 +18,9 @@
   height:50%;
   z-index:202;
   background-color:#000;
-  color:#fff; }
+  color:#fff;
+}
 
 .address-list-item:hover {
-  cursor:pointer; }
+  cursor:pointer;
+}
