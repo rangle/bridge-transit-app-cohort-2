@@ -1,7 +1,8 @@
 import React from 'react';
 
 export const AddressListItem = ({address, ...props}) => (
-    <div className="address-list-item" onClick={() => props.selectAddress(address)}>
+    <li className="address-list-item" onClick={() => props.selectAddress(address)}>
+        <i className="fa fa-home"></i>
         {address.formatted_address}
-    </div>
+    </li>
 );
