@@ -28,9 +28,9 @@ const connectConfig = connect(state => ({
   searchInput: state.searchInput,
   searchKeyword: state.category.searchKeyword,
   allCategories: state.category.categories,
-  selectedCategories: state.category.categories && state.category.categories.length > 0 
-    ? state.category.categories.filter(category => 
-      category.name.toLowerCase().includes(state.category.searchKeyword.toLowerCase())) 
+  selectedCategories: state.category.categories && state.category.categories.length > 0
+    ? state.category.categories.filter(category =>
+      category.name.toLowerCase().includes(state.category.searchKeyword.toLowerCase()))
     : null,
   categoriesError: state.category.didInvalidate,
   event: eventShellTemporary,
@@ -40,7 +40,9 @@ const connectConfig = connect(state => ({
   selectedAddress: state.address.selectedAddress,
   savedAddress: state.address.savedAddress,
   addressSearchInput: state.address.addressSearchInput,
-  displayAddressWindow: state.address.displayAddressWindow
+  displayAddressWindow: state.address.displayAddressWindow,
+  categoriesFetching: state.category.isFetching,
+  eventsFetching: state.events.isFetching,
 }), {
   inputChange,
   setSearchKeyword,

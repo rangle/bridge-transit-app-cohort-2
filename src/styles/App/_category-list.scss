@@ -54,3 +54,24 @@ $light-grey: #eee;
 .asset.fa-cubes {
   padding-left: 5px;
 }
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    text-align: center;
+    z-index: 300;
+
+    // Vertical centering aid
+    &::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width:0;
+        height: 100%;
+    }
+}
