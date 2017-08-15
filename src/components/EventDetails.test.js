@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import { EventDetails } from './EventDetails';
 
 describe('EventDetails component tests', () => {
@@ -25,7 +26,9 @@ describe('EventDetails component tests', () => {
   }};
 
   it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<EventDetails {...props} />, div);
+    const wrapper = shallow(<EventDetails {...props}/>);
+
+    expect(wrapper.find('div')).not.toHaveLength(0);
+    expect(wrapper.find('div')).not.toHaveLength(1);
   });
 });

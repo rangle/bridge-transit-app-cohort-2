@@ -16,7 +16,7 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navigation {...this.props}/>
+        <Navigation {...this.props} />
         { this.props.displayAddressWindow ? <AddressWindow {...this.props} /> : null}
         {childrenWithProps}
       </div>
