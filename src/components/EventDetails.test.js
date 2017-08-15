@@ -28,5 +28,4 @@ describe('EventDetails component tests', () => {
     const div = document.createElement('div');
     ReactDOM.render(<EventDetails {...props} />, div);
   });
-
 });

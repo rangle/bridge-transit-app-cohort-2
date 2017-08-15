@@ -1,5 +1,5 @@
 export const eventShellTemporary = {
-    name: "fun event",
+    name: {text: "fun event"},
     start: {local: "3 pm"},
     end: {local: "6 pm"},
     description: {text: "this is a fun event"},

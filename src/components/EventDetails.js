@@ -2,11 +2,15 @@ import React from 'react';
 import { Button } from './Button';
 
 export const EventDetails = (props) => {
-  return(
+  return (
     <div className='event-details-card'>
       <div className="event-details-container">
         <h3>{props.event.name.text}</h3>
-        <img alt="Event" src={props.event.logo.url} />
+        {
+          props.event.logo.url ? 
+          <img alt="Event" src={props.event.logo.url} />
+          : null
+        }
       </div>
       <div className='event-details-container'>
         <p className='event-details--time'>{props.event.start.local} to {props.event.end.local}</p>
