@@ -16,10 +16,10 @@ export const Event = event => {
       <a href={event.url}>
         <div className='event-container'>
           <div className="event-header">
-            <div className='event-image'>
-              {event.logo ? <img src={event.logo.url} alt="event-logo"/> : <img src='http://madihaevents.com/wp-content/uploads/2016/07/event.png' alt="event-logo"/>}
+            <div className='event-header--image'>
+              {event.logo ? <img src={event.logo.url} alt="event-logo"/> : <img src='http://madihaevents.com/wp-content/uploads/2016/07/event.png' style={{ height: '150px' }} alt="event-logo"/>}
             </div>
-            <span className='event-info--price'>{
+            <span className='event-header--price'>{
               event.is_free ? <span>Free</span> : <span>Click event for pricing details</span>
             }</span>
           </div>
