@@ -2,7 +2,6 @@ import React from 'react';
 import { Button } from './Button';
 import { SearchInput } from './SearchInput';
 import { CategoriesList } from './CategoriesList';
-import { SimpleMap } from './SimpleMap';
 
 export const Home = props => (
   <div className="home-container">
@@ -19,13 +18,5 @@ export const Home = props => (
       </div> 
     </div>
     <CategoriesList {...props}/>
-    <SimpleMap
-      containerElement={
-        <div className='map-container-element' />
-      }
-      mapElement={
-        <div className='map-element' />
-      }
-    />
   </div>
 ); 

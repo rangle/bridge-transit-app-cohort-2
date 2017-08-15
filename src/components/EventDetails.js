@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button } from './Button';
+import { SimpleMap } from './SimpleMap';
 
 export const EventDetails = (props) => {
   return (
@@ -25,8 +26,14 @@ export const EventDetails = (props) => {
             />
         } </p>
       </div>
-      {/* Add Google maps component */}
+      <SimpleMap
+        containerElement={
+          <div className='map-container-element' />
+        }
+        mapElement={
+          <div className='map-element' />
+        }
+      />
     </div>
   )
 };
-
