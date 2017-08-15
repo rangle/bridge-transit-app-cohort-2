@@ -12,6 +12,7 @@ import rootReducer from './redux/reducers';
 import App from './components/App';
 import { EventsByCategoryPage } from './components/EventsByCategoryPage';
 import { Home } from './components/Home';
+import { EventDetails } from './components/EventDetails';
 import './styles/css/index.css';
 
 const loggerMiddleware = createLogger();
@@ -31,6 +32,7 @@ const ReduxApp = () => (
       <Route path="/" component={App}>
         <IndexRoute component={ Home } />
         <Route path="/category/:categoryID" component={ EventsByCategoryPage }/>
+        <Route path="/event/:eventID" component={ EventDetails }/>
       </Route>
     </Router>
   </Provider>

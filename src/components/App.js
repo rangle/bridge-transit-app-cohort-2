@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { inputChange, setSearchKeyword, getCategories, getEvents, setAddresses, selectAddress, saveAddress, addressInputChange, showAddressWindow, hideAddressWindow } from './../redux/actions';
 import { Navigation } from './Navigation';
 import { AddressWindow } from './AddressWindow';
+import { eventShellTemporary } from '../constants/EventShellTemp';
 
 class App extends Component {
   componentDidMount() {
@@ -31,7 +32,10 @@ const connectConfig = connect(state => ({
     ? state.category.categories.filter(category => 
       category.name.toLowerCase().includes(state.category.searchKeyword.toLowerCase())) 
     : null,
+  categoriesError: state.category.didInvalidate,
+  event: eventShellTemporary,
   events: state.events.events,
+  eventsError: state.events.didInvalidate,
   addresses: state.address.addresses,
   selectedAddress: state.address.selectedAddress,
   savedAddress: state.address.savedAddress,
