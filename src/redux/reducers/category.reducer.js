@@ -23,7 +23,13 @@ export const categoryReducer = (state = DEFAULT_STATE, action) => {
       return Object.assign({}, state, {
         searchKeyword: action.payload,
       });
-      default:
+    case ACTION_TYPES.SET_CATEGORY_INVALIDATE:
+      return Object.assign({}, state, {
+        isFetching: false,
+        didInvalidate: true,
+        categories: []
+      });
+    default:
         return state;
     }
 }

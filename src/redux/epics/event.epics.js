@@ -21,8 +21,12 @@ export const getEventEpic = (action$) =>
         url: `${BASE_ENDPOINT}${action.payload}`,
         crossDomain: true
       })
-        .map(({ response }) => ({
-          type: ACTION_TYPES.SET_EVENTS,
-          payload: response,
-        }))
+      .map(({ response }) => ({
+        type: ACTION_TYPES.SET_EVENTS,
+        payload: response,
+      }))
+      .catch(error => Observable.of({
+        type: ACTION_TYPES.SET_EVENT_INVALIDATE,
+        payload: error
+      })) 
     );
