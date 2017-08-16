@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { inputChange, setSearchKeyword, getCategories, getEvents, setAddresses, selectAddress, saveAddress, addressInputChange, showAddressWindow, hideAddressWindow } from './../redux/actions';
+import { inputChange, setSearchKeyword, getCategories, setAddresses, selectAddress, saveAddress, addressInputChange, showAddressWindow, hideAddressWindow } from './../redux/actions';
 import { Navigation } from './Navigation';
 import { AddressWindow } from './AddressWindow';
 import { eventShellTemporary } from '../constants/EventShellTemp';
@@ -47,7 +47,6 @@ const connectConfig = connect(state => ({
   inputChange,
   setSearchKeyword,
   getCategories,
-  getEvents,
   setAddresses,
   selectAddress,
   saveAddress,
