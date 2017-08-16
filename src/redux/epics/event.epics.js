@@ -58,4 +58,8 @@ export const getEventEpic = (action$) =>
           type: ACTION_TYPES.SET_EVENT,
           payload: response,
         }))
+        .catch(error => Observable.of({
+          type: ACTION_TYPES.SET_EVENT_INVALIDATE,
+          payload: error
+      })) 
     );
