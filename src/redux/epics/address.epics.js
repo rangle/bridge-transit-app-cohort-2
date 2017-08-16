@@ -32,7 +32,7 @@ const doCORSRequest = (options) => {
         x.send(options.data);
 })};
 
-export const getAddressEpic = action$ =>
+export const getAddressEpic = (action$, _, {ajax}) =>
     action$.ofType(ACTION_TYPES.ADDRESS_INPUT_CHANGE)
         .debounceTime(400)
         .mergeMap(action => 
