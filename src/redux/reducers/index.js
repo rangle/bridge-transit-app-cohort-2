@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { eventsReducer } from './event.reducer';
+import { eventsReducer } from './events.reducer';
 import { routerReducer } from 'react-router-redux';
 import { searchInput } from './search.reducer';
 import { categoryReducer } from './category.reducer';
