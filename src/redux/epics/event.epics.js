@@ -30,15 +30,13 @@ export const getEventsEpic = (action$) =>
         payload: response,
       }))
       .catch(error => Observable.of({
-        type: ACTION_TYPES.SET_EVENT_INVALIDATE,
+        type: ACTION_TYPES.SET_EVENTS_INVALIDATE,
         payload: error
       })) 
     );
 
 // SECTION: Single event
-
-const reEventPath = /^\/event\/\d\d\d$/;
-
+const reEventPath = /^\/event\/(\d)+$/;
 export const returnEventActionOnLocationChange = (action$) =>
   action$.ofType('@@router/LOCATION_CHANGE')
     .filter(action => reEventPath.test(action.payload.pathname))

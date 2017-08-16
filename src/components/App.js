@@ -34,6 +34,8 @@ const connectConfig = connect(state => ({
     : null,
   categoriesError: state.category.didInvalidate,
   event: state.event.event,
+  eventFetching: state.event.isFetching,
+  eventError: state.event.didInvalidate,
   events: state.events.events,
   eventsError: state.events.didInvalidate,
   addresses: state.address.addresses,
