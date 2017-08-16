@@ -12,8 +12,8 @@ export const EventDetails = (props) => {
           <img alt="Event" src={props.event.logo.url} />
           : null
         }
-        <h3>{event.name.text}</h3>
-        <img alt="Event" src={event.logo.url} />
+        <h3>{props.event.name.text}</h3>
+        <img alt="Event" src={props.event.logo.url} />
       </div>
       <div className='event-details-container'>
         <p className='event-details--time'>{props.event.start.local} to {props.event.end.local}</p>
