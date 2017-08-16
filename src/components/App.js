@@ -33,7 +33,7 @@ const connectConfig = connect(state => ({
       category.name.toLowerCase().includes(state.category.searchKeyword.toLowerCase()))
     : null,
   categoriesError: state.category.didInvalidate,
-  event: eventShellTemporary,
+  event: state.event.event,
   events: state.events.events,
   eventsError: state.events.didInvalidate,
   addresses: state.address.addresses,
