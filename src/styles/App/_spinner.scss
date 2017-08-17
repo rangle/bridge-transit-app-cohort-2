@@ -4,22 +4,22 @@
     text-align: center;
     box-sizing: border-box;
 
-    > span {
+    span {
         color: #fff;
         line-height: 40px;
         font-size: 20px;
         font-weight: bold;
     }
+}
 
-    > .spinner-animation {
-        border: 17px solid #f3f3f3;
-        border-top: 17px solid #1F3B79;
-        border-radius: 50%;
-        width: 90px;
-        height: 90px;
-        animation: spinner-animation 2s linear infinite;
-        margin-top: 10px;
-    }
+.spinner-animation {
+    border: 17px solid #f3f3f3;
+    border-top: 17px solid #1F3B79;
+    border-radius: 50%;
+    width: 90px;
+    height: 90px;
+    animation: spinner-animation 2s linear infinite;
+    margin-top: 10px;
 }
 
 @keyframes spinner-animation {

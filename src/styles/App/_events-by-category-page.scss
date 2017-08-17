@@ -11,7 +11,7 @@
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
   margin: 15px auto 0 auto;
 
-  > a {
+  a {
     text-decoration: none;
     color: inherit;
   }
@@ -44,7 +44,7 @@
   height: 100%;
   background-color: #eff2f5;;
 
-  > img {
+  img {
     max-height: 100%;
     max-width: 100%;
   }
@@ -53,6 +53,8 @@
 .event-info {
   width: 100%;
   text-align: left;
+  position: relative;
+  padding-bottom: 80px;
 }
 
 .event-info--time {
@@ -70,13 +72,17 @@
   padding-left: 20px;
   padding-top: 3.3em;
   font-size: 14px;
+  position: absolute;
+  bottom: 44px;
 }
 
 .event-info--tag {
-  padding-top: 10px;
-  margin-top: 15px;
   text-align: left;
   border-top: solid 1px #eee;
+  position: absolute;
+  padding: 12px 20px;
+  bottom: 0;
+  width: 100%;
 
   span {
     margin-left: 20px;
