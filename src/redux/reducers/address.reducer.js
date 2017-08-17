@@ -58,8 +58,9 @@ const DEFAULT_STATE = {
         "types": [
             ""
         ]
-    }
-}
+    },
+  geolocation: null,
+};
 
 export const addressReducer = (state = DEFAULT_STATE, {type, payload}) => {
     switch(type) {
@@ -75,6 +76,8 @@ export const addressReducer = (state = DEFAULT_STATE, {type, payload}) => {
             return {...state, displayAddressWindow: true, selectedAddress: payload.addressObj, addressSearchInput: payload.addressString, addresses: []};
         case ACTION_TYPES.HIDE_ADDRESS_WINDOW:
             return {...state, displayAddressWindow: false};
+        case ACTION_TYPES.SET_GEOLOCATION:
+            return {...state, geolocation: payload};
         default:
             return state;
     }

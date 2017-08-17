@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { inputChange, setSearchKeyword, getCategories, setAddresses, selectAddress, saveAddress, addressInputChange, showAddressWindow, hideAddressWindow } from './../redux/actions';
+import { inputChange, setSearchKeyword, getCategories, getEvents, setAddresses, selectAddress, saveAddress,
+  addressInputChange, showAddressWindow, hideAddressWindow, getGeolocation } from './../redux/actions';
+import './../redux/actions';
 import { Navigation } from './Navigation';
 import { AddressWindow } from './AddressWindow';
 
 class App extends Component {
   componentDidMount() {
     this.props.getCategories();
+    this.props.getGeolocation();
   }
 
   render() {
@@ -53,7 +56,8 @@ const connectConfig = connect(state => ({
   saveAddress,
   addressInputChange,
   showAddressWindow,
-  hideAddressWindow
+  hideAddressWindow,
+  getGeolocation,
 });
 
 export default connectConfig(App);
