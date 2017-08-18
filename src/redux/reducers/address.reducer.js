@@ -59,7 +59,8 @@ const DEFAULT_STATE = {
             ""
         ]
     },
-  geolocation: null,
+  location: null,
+  geolocationDidInvalidate: false,
 };
 
 export const addressReducer = (state = DEFAULT_STATE, {type, payload}) => {
@@ -77,7 +78,9 @@ export const addressReducer = (state = DEFAULT_STATE, {type, payload}) => {
         case ACTION_TYPES.HIDE_ADDRESS_WINDOW:
             return {...state, displayAddressWindow: false};
         case ACTION_TYPES.SET_GEOLOCATION:
-            return {...state, geolocation: payload};
+            return {...state, location: payload};
+        case ACTION_TYPES.GET_GEOLOCATION_INVALIDATE:
+            return {...state, geolocationDidInvalidate: true};
         default:
             return state;
     }
