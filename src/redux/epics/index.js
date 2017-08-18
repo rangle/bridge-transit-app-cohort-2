@@ -12,6 +12,6 @@ export default combineEpics(
   getAddressEpic,
   returnEventsActionOnLocationChange,
   getEventEpic,
-  returnEventActionOnLocationChange
+  returnEventActionOnLocationChange,
   geolocationEpic,
 )
