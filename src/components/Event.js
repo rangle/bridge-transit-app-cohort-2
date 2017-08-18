@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router';
 
 export const Event = event => {
   const eventDateInstance = new Date(event.start.local)
@@ -10,10 +11,12 @@ export const Event = event => {
   eventDateMinute = eventDateMinute === '0'
     ? eventDateMinute = `${eventDateMinute}0`
     : eventDateMinute
+  const eventID = event.id;
+  const eventLink = `/event/${eventID}`;
 
   return(
     <li className='event-card'>
-      <a href={event.url}>
+      <Link to={eventLink}>
         <div className='event-container'>
           <div className="event-header">
             <div className='event-header--image'>
@@ -34,7 +37,7 @@ export const Event = event => {
             </div>
           </div>
         </div>
-      </a>
+      </Link>
     </li>
   )
 }

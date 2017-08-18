@@ -7,3 +7,4 @@ export const eventShellTemporary = {
     url: "www.someevent.com",
     logo: {url: "www.someimage.com"}
 };
+
