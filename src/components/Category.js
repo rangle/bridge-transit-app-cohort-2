@@ -12,8 +12,7 @@ export const Category = (props) => {
     {name: 'Sports & Fitness', icon: <i className="asset fa fa-futbol-o" aria-hidden="true"></i>},
     {name:'Health & Wellness', icon:<i className="asset fa fa-heartbeat" aria-hidden="true"></i>},
     {name:'Science & Technology', icon: <i className="asset fa fa-flask" aria-hidden="true"></i> },
-    {name:'Travel & Outdoor', icon:<i className="asset fa fa-plane" aria-hidden="true"></i>
-},
+    {name:'Travel & Outdoor', icon:<i className="asset fa fa-plane" aria-hidden="true"></i>},
     {name:'Charity & Causes', icon: <i className="asset fa fa-hand-peace-o" aria-hidden="true"></i>},
     {name:'Religion & Spirituality', icon: <i className="asset fa fa-grav" aria-hidden="true"></i>},
     {name:'Family & Education', icon: <i className="asset fa fa-graduation-cap" aria-hidden="true"></i>},
@@ -21,14 +20,13 @@ export const Category = (props) => {
     {name:'Government & Politics', icon: <i className="asset fa fa-university" aria-hidden="true"></i>},
     {name:'Fashion & Beauty', icon: <i className="asset fa fa-rocket" aria-hidden="true"></i>},
     {name:'Home & Lifestyle', icon: <i className="asset fa fa-home" aria-hidden="true"></i>},
-    {name:'Auto, Boat & Air', icon: <i className="asset fa fa-ship" aria-hidden="true"></i>
-},
+    {name:'Auto, Boat & Air', icon: <i className="asset fa fa-ship" aria-hidden="true"></i>},
     {name:'Hobbies & Special Interest', icon: <i className="asset fa fa-search" aria-hidden="true"></i>},
     {name:'Other', icon: <i className="asset fa fa-cubes" aria-hidden="true"></i>}
   ];
 
   const iconRendering = (name) => {
-    return iconsList.map( iconObj => iconObj.name === name ? iconObj.icon : null );
+    return iconsList.map( iconObj => iconObj.name === name ? React.cloneElement(iconObj.icon, {key: iconObj.name}) : null );
   }
 
   const categoryID = props.id;
