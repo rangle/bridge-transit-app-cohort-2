@@ -27,7 +27,7 @@ export const geolocationEpic = (action$) =>
           lng: result.coords.longitude,
         }
       })).catch(error => Observable.of({
-        type: ACTION_TYPES.GET_GEOLOCATION_INVALIDATE,
+        type: ACTION_TYPES.SET_GEOLOCATION_INVALIDATE,
         payload: error
       }))
     );
