@@ -11,7 +11,7 @@ const CATEGORY_QUERY_PATH = '&location.address=toronto&categories=';
 const CATEGORY_METHOD_PATH = 'search/';
 const reCategoryPath = /^\/category\/\d\d\d$/;
 
-export const returnEventsActionOnLocationChange = (action$, _) =>
+export const returnEventsActionOnLocationChange = action$ =>
   action$.ofType('@@router/LOCATION_CHANGE')
     .filter(action => reCategoryPath.test(action.payload.pathname))
     .map(action => ({
@@ -38,7 +38,7 @@ export const getEventsEpic = (action$, _, {ajax}) =>
 
 // SECTION: Single event
 const reEventPath = /^\/event\/(\d)+$/;
-export const returnEventActionOnLocationChange = (action$, _) =>
+export const returnEventActionOnLocationChange = action$ =>
   action$.ofType('@@router/LOCATION_CHANGE')
     .filter(action => reEventPath.test(action.payload.pathname))
     .map(action => ({
