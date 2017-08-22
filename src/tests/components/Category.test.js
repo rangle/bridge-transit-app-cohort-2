@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Category } from './Category';
+import { Category } from '../../components/Category';
 
 it('renders without crashing', () => {
   const props = {
