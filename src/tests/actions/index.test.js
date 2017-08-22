@@ -1,4 +1,4 @@
-import * as Actions from './index';
+import * as Actions from '../../redux/actions';
 import { ACTION_TYPES } from '../../constants/ActionTypes';
 
 describe('actions', () => {
