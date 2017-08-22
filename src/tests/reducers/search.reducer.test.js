@@ -1,5 +1,5 @@
 import { ACTION_TYPES } from '../../constants/ActionTypes';
-import { searchInput, DEFAULT_STATE } from './search.reducer';
+import { searchInput, DEFAULT_STATE } from '../../redux/reducers/search.reducer';
 
 describe('Search reducer', () => {
 
