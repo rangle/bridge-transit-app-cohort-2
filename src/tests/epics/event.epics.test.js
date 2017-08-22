@@ -1,6 +1,6 @@
 import { ActionsObservable } from 'redux-observable';
 import { Observable } from 'rxjs';
-import { getEventEpic } from './event.epics';
+import { getEventEpic } from '../../redux/epics/event.epics';
 import { ACTION_TYPES } from '../../constants/ActionTypes';
 
 describe('event epics', () => {
