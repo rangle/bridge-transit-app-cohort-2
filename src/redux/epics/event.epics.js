@@ -10,7 +10,8 @@ const API_KEY_PATH = `?token=${EVENTBRITE_API_KEY}`;
 const CATEGORY_QUERY_PATH = '&location.address=toronto&categories=';
 const CATEGORY_METHOD_PATH = 'search/';
 const reCategoryPath = /^\/category\/\d\d\d$/;
-export const returnEventsActionOnLocationChange = (action$) =>
+
+export const returnEventsActionOnLocationChange = action$ =>
   action$.ofType('@@router/LOCATION_CHANGE')
     .filter(action => reCategoryPath.test(action.payload.pathname))
     .map(action => ({
@@ -18,10 +19,10 @@ export const returnEventsActionOnLocationChange = (action$) =>
         payload: action.payload.pathname.replace('/category/', '')
       }));
 
-export const getEventsEpic = (action$) =>
+export const getEventsEpic = (action$, _, {ajax}) =>
   action$.ofType(ACTION_TYPES.GET_EVENTS)
     .mergeMap(action =>
-      Observable.ajax({
+      ajax({
         url: `${BASE_ENDPOINT}${CATEGORY_METHOD_PATH}${API_KEY_PATH}${CATEGORY_QUERY_PATH}${action.payload}`,
         crossDomain: true
       })
@@ -37,7 +38,7 @@ export const getEventsEpic = (action$) =>
 
 // SECTION: Single event
 const reEventPath = /^\/event\/(\d)+$/;
-export const returnEventActionOnLocationChange = (action$) =>
+export const returnEventActionOnLocationChange = action$ =>
   action$.ofType('@@router/LOCATION_CHANGE')
     .filter(action => reEventPath.test(action.payload.pathname))
     .map(action => ({
@@ -45,10 +46,10 @@ export const returnEventActionOnLocationChange = (action$) =>
         payload: action.payload.pathname.replace('/event/', '')
       }));
 
-export const getEventEpic = (action$) =>
+export const getEventEpic = (action$, _, {ajax}) =>
   action$.ofType(ACTION_TYPES.GET_EVENT)
     .mergeMap(action =>
-      Observable.ajax({
+      ajax({
         url: `${BASE_ENDPOINT}${action.payload}/${API_KEY_PATH}`,
         crossDomain: true
       })

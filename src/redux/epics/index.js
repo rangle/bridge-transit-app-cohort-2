@@ -4,9 +4,11 @@ import { getCategoryEpic } from './category.epics';
 import { getEventsEpic, returnEventsActionOnLocationChange, getEventEpic, returnEventActionOnLocationChange } from './event.epics';
 import { getAddressEpic } from './address.epics'
 import { geolocationEpic } from './geolocation.epics'
+import { Observable } from 'rxjs';
 
 
-export default combineEpics(
+export default (...args) => 
+combineEpics(
   getCategoryEpic,
   getEventsEpic,
   getAddressEpic,
@@ -14,4 +16,5 @@ export default combineEpics(
   getEventEpic,
   returnEventActionOnLocationChange,
   geolocationEpic,
-)
+  returnEventActionOnLocationChange
+)(...args, { ajax: Observable.ajax })
