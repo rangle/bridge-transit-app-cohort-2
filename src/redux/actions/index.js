@@ -64,3 +64,8 @@ export const getGeolocation = location => ({
   type: ACTION_TYPES.GET_GEOLOCATION,
   payload: location
 });
+
+export const updateEventDetailRender = () => ({
+  type: ACTION_TYPES.UPDATE_EVENT_DETAIL_RENDER,
+});
+

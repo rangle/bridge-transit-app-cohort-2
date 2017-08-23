@@ -35,9 +35,9 @@ export const EventDetails = (props) => {
       <div className='event-details-card'>
         <div className='event-details-container-image'>
           {
-            props.event.logo.url 
+            props.event.logo && props.event.logo.url 
             ? <img className='event-details--image' alt="Event" src={props.event.logo.url} />
-            : null
+            : <img className='event-details--image' alt="Event" src='http://madihaevents.com/wp-content/uploads/2016/07/event.png' />
           }
         </div>
           <div className='event-details-container-main'>
@@ -52,15 +52,28 @@ export const EventDetails = (props) => {
                     className='button is-primary is-large'
                     content='Buy Tickets'
                     aria-label='Buy Tickets'
-                    handleClick= { () => window.location.assign(props.event.url) }
+                    handleClick={ () => window.location.assign(props.event.url) }
                   />
               } 
             </p>
           </div>
-          <div className='event-details-container-description'>
-            <h4 className='event-details--description-title'>Description</h4>
-            <p className='event-details--description-details'>{props.event.description.text}</p>
-          </div>
+          <div 
+            className={`event-details-container-description ${props.eventIsPreview 
+              ? 'details-preview' 
+              : ''}`}
+            dangerouslySetInnerHTML={{__html: props.event.description.html}} 
+          />
+          {props.eventIsPreview 
+            ? <div className='event-preview-button-container'>
+                <Button
+                  className='button is-primary is-large event-preview'
+                  content='Show More'
+                  aria-label='Show More'
+                  handleClick={ () => props.updateEventDetailRender() }
+                />
+              </div>
+            : null
+          }
           <SimpleMap
             containerElement={
               <div className='map-container-element' />
