@@ -1,5 +1,6 @@
 import React from 'react';
 import { SimpleMap } from './SimpleMap'; 
+import { DirectionsMap } from './DirectionsMap';
 
 export const DirectionsWindow = props => (
     <div className="directions-window">
@@ -18,7 +19,7 @@ export const DirectionsWindow = props => (
             </div>
            <div className="directions-container">
                <div className="directions-map">
-                    <SimpleMap
+                    <DirectionsMap
                         containerElement={
                             <div className='directions-map-container-element' />
                         } 
