@@ -49,6 +49,7 @@ p {
   border: none;
   color: $dark-blue;
   background: transparent;
+  font-size: 16px;
 }
 
 .is-primary {
@@ -58,6 +59,8 @@ p {
   color: $white;
   @include Montserrat;
   text-align: center;
+  font-size: 16px;
+  padding: 7px 30px;
 }
 
 //input
