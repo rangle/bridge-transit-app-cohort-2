@@ -1,11 +1,25 @@
+@import "./_constants.scss";
+
+.overlay {
+    @include overlay;
+
+// Vertical centering aid
+    &::before {
+        content: '';
+        display: inline-block;
+        vertical-align: middle;
+        width:0;
+        height: 100%;
+    }
+}
+
 .spinner {
     display: inline-block;
     vertical-align: middle;
     text-align: center;
-    box-sizing: border-box;
 
     span {
-        color: #fff;
+        color: $white;
         line-height: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -13,12 +27,12 @@
 }
 
 .spinner-animation {
-    border: 17px solid #f3f3f3;
-    border-top: 17px solid #1F3B79;
+    border: 10px solid $white;
+    border-top: 10px solid $basic-blue;
     border-radius: 50%;
-    width: 90px;
-    height: 90px;
-    animation: spinner-animation 2s linear infinite;
+    width: 80px;
+    height: 80px;
+    animation: spinner-animation 1.8s linear infinite;
     margin-top: 10px;
 }
 

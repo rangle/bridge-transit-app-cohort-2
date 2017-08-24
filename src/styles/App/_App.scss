@@ -1,30 +1,47 @@
-$light-grey: #f5f5f5;
-$dark-blue: #34495E;
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background-color: $light-grey;
-  color: $dark-blue;
-}
+@import "./_constants.scss";
 
 .App {
-  font-family: 'helvetica neue', helvetica, sans-serif;
   text-align: center;
 }
 
 .App-header {
-  background: url(../../assets/events-header.jpg) bottom;
   background-size: cover;
   padding-bottom: 0;
-  padding-top: 30vh;
+  padding-top: 38vh;
+  background-repeat: no-repeat;
+}
+
+.App-header-1 {
+  background: url(../../assets/events-header-min.jpg) bottom;  
+}
+
+.App-header-2 {
+  background: url(../../assets/filip-mroz-177565-min.jpg) bottom; 
+  background-size: cover;
+}
+
+.App-header-3 {
+  background: url(../../assets/samuel-fyfe-251960-min.jpg) center;
+  background-size: cover;  
+}
+
+.App-header-4 {
+  background: url(../../assets/cater-yang-195422-min.jpg) center;
+  background-size: cover;  
+}
+
+.App-header-5 {
+  background: url(../../assets/ethan-hoover-334116-min.jpg) bottom;
+  background-size: cover; 
+}
+
+.App-header-6 {
+  background: url(../../assets/matt-lee-19500-min.jpg) bottom;
+  background-size: cover;  
 }
 
 .App-header:after {
-  background: linear-gradient(to top right, rgba(128, 0, 128, 0.29) 40%, rgba(255, 192, 203, 0.75));
+  @include image-gradient;
   bottom: 10px;
   content:"";
   height:100%;
@@ -35,9 +52,8 @@ body {
 }
 
 .header-catch-phrase {
-  color: #fff;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 40px;
+  color: $white;
+  font-size: 60px;
   position: relative;
   z-index: 200;
 }

@@ -1,0 +1,45 @@
+///// MEDIA-QUERIES
+$lg-width: 960px;
+$md-width: 680px;
+
+///// COLOUR
+$basic-blue: #2786a2;
+$dark-blue: #34495E;
+$white: #fff;
+$overlay-bckg: rgba(0, 0, 0, 0.6);
+$light-grey: #efefef;
+$grey: #EFF2F5;
+$medium-grey: #bbb;
+$black: #000;
+$light-black: rgba(0, 0, 0, 0.2);
+
+///// MIXINS
+@mixin box-shadow {
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+}
+
+@mixin overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 400;
+  background: $overlay-bckg;
+}
+
+@mixin border-radius {
+  border-radius: 5px;
+}
+
+@mixin image-gradient {
+  background: linear-gradient(to top right, rgba(76,89,115,0.8)40%, rgba(63,188,155, 0.8));
+}
+
+@mixin icon-gradient {
+  background: linear-gradient(to top right, rgba(39, 134, 162,1) 50%, rgba(63,188,155, 0.8));
+}
+
+@mixin Montserrat {
+  font-family: 'Montserrat', sans-serif;
+}

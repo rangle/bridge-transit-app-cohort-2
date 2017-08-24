@@ -9,7 +9,7 @@ export const SearchInput = ({label, searchInput, inputChange, setSearchKeyword})
     // to all search inputs across app as well as specific styling for 
     // specific input instances)
 
-    <div className={`${label.replace(/\s/g,'-')} search-input`}>
+    <div className={`${label.replace(/\s/g,'-')} search-input-div`}>
        <input className="search-input" type="search" value={searchInput} placeholder={label}
               onChange={ev => inputChange(ev.target.value)}
               onKeyPress={(event) => {
