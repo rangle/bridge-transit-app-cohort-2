@@ -91,7 +91,9 @@ export const EventDetails = (props) => {
                   aria-label='Show More'
                   handleClick={ () => props.updateEventDetailRender() }
                 />
-
+              </div>
+            : null
+          }
           <SimpleMap
             containerElement={
               <div className='map-container-element' />
