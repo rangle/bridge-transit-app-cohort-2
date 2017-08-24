@@ -17,7 +17,6 @@ export const eventReducer = (state = DEFAULT_STATE, action) => {
     case ACTION_TYPES.SET_EVENT_INVALIDATE:
       return {...state, isFetching: false, didInvalidate: true, event: null}
     case ACTION_TYPES.UPDATE_EVENT_DETAIL_RENDER:
-      console.log('hi');
       return {...state, isPreview: false}
     default:
       return state;
