@@ -15,6 +15,7 @@
   list-style: none;
   @include box-shadow;
   margin: 0 auto 15px;
+  max-width: 700px;
 
   @media (min-width: 600px) {
     width: calc(80% - 30px);
@@ -106,7 +107,7 @@
 
 .event-info--title {
   font-size: 17px;
-  margin: 0 0 12px;
+  margin: 0 0 55px;
 }
 
 .event-info--location {
