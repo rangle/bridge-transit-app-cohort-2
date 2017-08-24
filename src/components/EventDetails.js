@@ -55,13 +55,13 @@ export const EventDetails = (props) => {
                 props.event.is_free 
                 ? <span>Free</span> 
                 : <Button
-                    className='button is-primary is-large'
+                    className='button is-primary is-large buy-tickets'
                     content='Buy Tickets'
                     aria-label='Buy Tickets'
                     handleClick={ () => window.location.assign(props.event.url) }
                   />
               } 
-            <button className="btn btn-default button is-primary is-large" 
+            <button className="btn btn-default button is-primary is-large get-directions" 
                     onClick={() => props.getDirections({
                       origin: {
                         //TODO: replace this with "current address:"
