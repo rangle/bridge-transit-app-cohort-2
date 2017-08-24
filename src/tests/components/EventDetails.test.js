@@ -21,12 +21,34 @@ describe('EventDetails component tests', () => {
       is_free:  false,
       logo : {
         url: "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F28253674%2F183837305730%2F1%2Foriginal.jpg?h=200&w=450&rect=0%2C0%2C1000%2C500&s=b42f77f4a43a35ab28df4b3276da3494",
+      },
+      venue: {
+        address: {
+          address_1: "5875 Airport Road",
+          address_2: null,
+          city: "Mississauga",
+          region: "ON",
+          postal_code: "L4V 1N1",
+          country: "CA",
+          latitude: "43.686773",
+          longitude: "-79.60380499999997",
+          localized_address_display: "5875 Airport Road, Mississauga, ON L4V 1N1",
+          localized_area_display: "Mississauga, ON",
+          localized_multi_line_address_display: [
+            "5875 Airport Road",
+            "Mississauga, ON L4V 1N1"
+          ]
+        },
+        resource_uri: "https://www.eventbriteapi.com/v3/venues/20442514/",
+        id: "20442514",
+        name: "Hilton Toronto Airport Hotel & Suites",
+        latitude: "43.686773",
+        longitude: "-79.60380499999997"
       }
   }};
 
   it('renders without crashing', () => {
     const wrapper = shallow(<EventDetails {...props}/>);
-
     expect(wrapper.find('div')).not.toHaveLength(0);
     expect(wrapper.find('div')).not.toHaveLength(1);
   });
