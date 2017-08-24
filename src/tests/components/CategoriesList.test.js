@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import { CategoriesList } from './CategoriesList';
-import { Category } from './Category';
+import { CategoriesList } from '../../components/CategoriesList';
+import { Category } from '../../components/Category';
 
 it('renders without crashing', () => {
   const props = {

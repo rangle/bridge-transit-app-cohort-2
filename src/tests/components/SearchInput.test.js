@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { shallow } from 'enzyme';
-import { SearchInput } from './SearchInput';
+import { SearchInput } from '../../components/SearchInput';
 
 describe('SearchInput component tests', () => {
   const inputChange = jest.fn();

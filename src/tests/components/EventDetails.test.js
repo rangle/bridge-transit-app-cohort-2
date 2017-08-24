@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { EventDetails } from './EventDetails';
+import { EventDetails } from '../../components/EventDetails';
 
 describe('EventDetails component tests', () => {
   const props = {
