@@ -1,4 +1,3 @@
-import React from 'react';
 import { ACTION_TYPES } from '../../constants/ActionTypes';
 import { Observable } from 'rxjs';
 
