@@ -10,7 +10,7 @@
 }
 .directions-window h1{
   margin:0;
-  padding-bottom:20px;
+  padding-bottom:30px;
 }
 .directions-modal {
   background: #eee;
@@ -41,13 +41,15 @@
 }
 .directions-panel {
     background-color:#fff;
+    overflow-y:scroll;
+    height:20em;
     flex-basis:50%;
-    padding:2em;
+    padding:1em;
     border-radius: 5px;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
 }
 .directions-map-element {
-    height:30em;
+    height:20em;
 }
 .ordered-directions {
   text-align: left;
@@ -61,6 +63,8 @@
 .directions-location-container {
   display:flex;
   flex-grow:1;
+  flex-basis:50%;
+  min-width:0;
 }
 .directions-location-container:first-child {
   margin-right:1em;
@@ -75,8 +79,12 @@
 }
 .directions-location {
   padding: 1em;
+  min-width:0;
+  white-space: nowrap;
+  overflow:hidden;
   flex-grow:1;
   border-radius: 5px;
   box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
   background-color:#fff;
+  text-overflow: ellipsis;
 }
