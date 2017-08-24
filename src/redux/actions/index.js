@@ -69,3 +69,8 @@ export const getDirections = locations => ({
   type: ACTION_TYPES.GET_DIRECTIONS,
   payload: locations
 });
+
+export const hideDirectionsWindow = () => ({
+  type: ACTION_TYPES.HIDE_DIRECTIONS_WINDOW,
+  payload: ''
+});
