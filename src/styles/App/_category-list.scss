@@ -1,5 +1,4 @@
-$dark-blue: #34495E;
-$light-grey: #eee;
+@import "./_constants.scss";
 
 .Categories-list {
   align-content: space-around;
@@ -7,10 +6,9 @@ $light-grey: #eee;
   color: $dark-blue;
   display: flex;
   flex-flow: row wrap;
-  font-family: 'Montserrat', sans-serif;
+  @include Montserrat;
   justify-content: space-around;
   margin: 0 auto;
-  min-height: 35vh;
   padding: 100px 70px;
   position: relative;
   text-transform: uppercase;
@@ -19,22 +17,18 @@ $light-grey: #eee;
 }
 
 .Category {
-  background: #fff;
-  border-radius: 5px;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
-  margin-bottom: 40px;
+  background: $white;
+  @include border-radius;
+  @include box-shadow;
+  margin-bottom: 25px;
   padding: 20px;
   width: calc(20% - 30px);
-
-  > a {
-    text-decoration: none;
-    color: inherit;
-  }
+  min-width: 200px;
 }
 
 .asset-container {
   align-items: center;
-  background: linear-gradient(to top right, rgba(39, 134, 162,1) 50%, rgba(63,188,155, 0.8));
+  @include icon-gradient;
   border-radius: 50%;
   display: flex;
   height: 80px;
@@ -55,23 +49,3 @@ $light-grey: #eee;
   padding-left: 5px;
 }
 
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom:0;
-    background-color: rgba(0, 0, 0, 0.5);
-    overflow: hidden;
-    text-align: center;
-    z-index: 300;
-
-    // Vertical centering aid
-    &::before {
-        content: '';
-        display: inline-block;
-        vertical-align: middle;
-        width:0;
-        height: 100%;
-    }
-}
