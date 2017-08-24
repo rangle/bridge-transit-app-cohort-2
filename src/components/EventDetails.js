@@ -75,6 +75,8 @@ export const EventDetails = (props) => {
             : null
           }
           <SimpleMap
+            coordinates={props.event.venue_location}
+            venueName={props.event.venue.name}
             containerElement={
               <div className='map-container-element' />
             }

@@ -50,7 +50,7 @@ export const getEventEpic = (action$, _, {ajax}) =>
   action$.ofType(ACTION_TYPES.GET_EVENT)
     .mergeMap(action =>
       ajax({
-        url: `${BASE_ENDPOINT}${action.payload}/${API_KEY_PATH}`,
+        url: `${BASE_ENDPOINT}${action.payload}/${API_KEY_PATH}&expand=venue`,
         crossDomain: true
       })
         .map(({ response }) => ({
