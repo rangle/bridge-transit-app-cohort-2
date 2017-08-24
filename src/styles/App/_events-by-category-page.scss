@@ -1,48 +1,72 @@
+@import "./_constants.scss";
+
 .events-by-category-page {
+  @include Montserrat;
+  padding: 60px 70px;
+
   h2 {
-    font-size: 2.3rem;
+    margin: 40px 0;
   }
 }
 
 .event-card {
-  background-color: #fff;
-  width: calc(70% - 30px);
+  background-color: $white;
+  width: 100%;
   list-style: none;
-  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
-  margin: 15px auto 0 auto;
+  @include box-shadow;
+  margin: 0 auto 15px;
+  max-width: 700px;
 
-  a {
-    text-decoration: none;
-    color: inherit;
+  @media (min-width: 600px) {
+    width: calc(80% - 30px);
+    margin: 15px auto 0 auto;
+  }
+
+  @media (min-width: $md-width) {
+    min-width: 520px;
+    margin: 15px auto 0 auto;
   }
 }
 
+.events-list {
+  padding: 0;
+  margin: 0;
+}
+
 .event-container {
-  display: flex;
-  height: 100%;
+  display: block;
+  margin-bottom: 25px;
+
+  @media (min-width: $md-width) {
+    display: flex;
+  }
 }
 
 .event-header {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  width: 100%;
+ 
+  @media (min-width: $md-width) {
+    min-width: 250px;
+    width: 60%;
+  }
 }
 
 .event-header--price {
-    background-color: #EFF2F5;
-    text-transform: uppercase;
-    font-size: 12px;
-    height: 40px;
-    line-height: 40px;
-    text-align: left;
-    padding-left: 15px;
-    font-family: 'Montserrat', sans-serif;
+  background-color: $grey;
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 43px;
+  text-align: left;
+  padding-left: 15px;
 }
 
 .event-header--image {
-  width: 300px;
+  width: 100%;
   height: 100%;
-  background-color: #eff2f5;;
+  background-color: $grey;
+  display: block;
 
   img {
     max-height: 100%;
@@ -50,39 +74,57 @@
   }
 }
 
+.event-header--image .default-icon {
+  max-height: 100%;
+  max-width: 70%;
+  min-width: 180px;
+  padding-top: 20px;
+}
+
+.event-image {
+  width: 100%;
+  background-size: cover;
+  height: 180px;
+  background-repeat: no-repeat;
+  background-position: center;
+ 
+  @media (min-width: $md-width) {
+    height: 100%;
+  }
+}
+
 .event-info {
   width: 100%;
   text-align: left;
   position: relative;
-  padding-bottom: 80px;
+  padding: 20px 20px 80px;
 }
 
 .event-info--time {
-  padding-left: 20px;
   font-size: 14px;
-  height: 4px;
+  margin: 0 0 12px;
 }
 
 .event-info--title {
-  padding-left: 20px;
   font-size: 17px;
+  margin: 0 0 55px;
 }
 
 .event-info--location {
-  padding-left: 20px;
-  padding-top: 3.3em;
   font-size: 14px;
   position: absolute;
   bottom: 44px;
+  width: 100%;
 }
 
 .event-info--tag {
   text-align: left;
-  border-top: solid 1px #eee;
+  border-top: solid 1px $grey;
   position: absolute;
-  padding: 12px 20px;
+  padding: 12px 0;
   bottom: 0;
   width: 100%;
+  left: 0;
 
   span {
     margin-left: 20px;

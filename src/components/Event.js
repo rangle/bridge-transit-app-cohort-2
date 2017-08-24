@@ -20,7 +20,8 @@ export const Event = event => {
         <div className='event-container'>
           <div className="event-header">
             <div className='event-header--image'>
-              {event.logo ? <img src={event.logo.url} alt="event-logo"/> : <img src='http://madihaevents.com/wp-content/uploads/2016/07/event.png' style={{ height: '150px' }} alt="event-logo"/>}
+              {event.logo ? <div className='event-image' style={{ backgroundImage : 'url(' + event.logo.url + ')'}} alt="event-logo"/> : <img className="default-icon" src='http://madihaevents.com/wp-content/uploads/2016/07/event.png' alt="event-logo"/>}
+
             </div>
             <span className='event-header--price'>{
               event.is_free ? <span>Free</span> : <span>Click event for pricing details</span>
