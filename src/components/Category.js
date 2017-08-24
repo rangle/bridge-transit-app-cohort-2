@@ -38,7 +38,7 @@ export const Category = (props) => {
         <div className='asset-container'>
           { iconRendering(props.name) }
         </div>
-        <div>{props.name}</div>
+        <h3 className='category-title'>{props.name}</h3>
       </Link>
     </div>
   )
