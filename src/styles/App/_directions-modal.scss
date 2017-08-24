@@ -1,0 +1,90 @@
+.directions-window {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 400;
+  background: rgba(0, 0, 0, 0.7);
+  font-family: 'Montserrat', sans-serif;
+}
+.directions-window h1{
+  margin:0;
+  padding-bottom:30px;
+}
+.directions-modal {
+  background: #eee;
+  width: 70%;
+  height: 90%;
+  margin: 0 auto;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 5px;
+  padding: 50px;
+}
+.directions-container {
+  display: flex;
+  align-content: stretch;
+  align-items:stretch;
+}
+.directions-scrollable {
+  height:90%;
+  overflow-y:scroll;
+}
+.directions-addresses{
+  padding: 0 0 2em 0; 
+  display:flex;
+}
+.directions-map {
+    flex-basis: 50%;
+}
+.directions-panel {
+    background-color:#fff;
+    overflow-y:scroll;
+    height:20em;
+    flex-basis:50%;
+    padding:1em;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+}
+.directions-map-element {
+    height:20em;
+}
+.ordered-directions {
+  text-align: left;
+}
+.ordered-directions li {
+  padding-bottom:1.5em;
+}
+.ordered-directions li:last-child {
+  padding-bottom:0;
+}
+.directions-location-container {
+  display:flex;
+  flex-grow:1;
+  flex-basis:50%;
+  min-width:0;
+}
+.directions-location-container:first-child {
+  margin-right:1em;
+}
+.directions-location-label {
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+  background-color:#666;
+  color:#fff;
+  display:inline-block;
+}
+.directions-location {
+  padding: 1em;
+  min-width:0;
+  white-space: nowrap;
+  overflow:hidden;
+  flex-grow:1;
+  border-radius: 5px;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.05);
+  background-color:#fff;
+  text-overflow: ellipsis;
+}

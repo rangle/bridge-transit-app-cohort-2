@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from './Button';
 import { SimpleMap } from './SimpleMap';
 import { Spinner } from './Spinner';
+import { DirectionsWindow } from './DirectionsWindow';
 
 export const EventDetails = (props) => {
   if (props.eventError) {
@@ -32,6 +33,11 @@ export const EventDetails = (props) => {
 
     return (
       <div className='event-details-page'>
+       {
+         props.displayDirectionsWindow ?
+         <DirectionsWindow {...props} />
+         : null 
+       }
       <div className='event-details-card'>
         <div className='event-details-container-image'>
           {
@@ -49,12 +55,26 @@ export const EventDetails = (props) => {
                 props.event.is_free 
                 ? <span>Free</span> 
                 : <Button
-                    className='button is-primary is-large'
+                    className='button is-primary is-large buy-tickets'
                     content='Buy Tickets'
                     aria-label='Buy Tickets'
                     handleClick={ () => window.location.assign(props.event.url) }
                   />
               } 
+            <button className="btn btn-default button is-primary is-large get-directions" 
+                    onClick={() => props.getDirections({
+                      origin: {
+                        //TODO: replace this with "current address:"
+                                lat: props.savedAddress.geometry.location.lat || '43.65711530000001',
+                                lng: props.savedAddress.geometry.location.lng || '-79.4002088'
+                              },
+                      destination: {
+                                lat: props.event.venue.latitude,
+                                lng: props.event.venue.longitude
+                      }
+            })}>
+              Get Directions
+            </button>
             </p>
           </div>
           <div 

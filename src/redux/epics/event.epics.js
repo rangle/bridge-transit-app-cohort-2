@@ -38,6 +38,8 @@ export const getEventsEpic = (action$, _, {ajax}) =>
 
 // SECTION: Single event
 const reEventPath = /^\/event\/(\d)+$/;
+const EVENT_QUERY_PATH = '&expand=venue';
+
 export const returnEventActionOnLocationChange = action$ =>
   action$.ofType('@@router/LOCATION_CHANGE')
     .filter(action => reEventPath.test(action.payload.pathname))
@@ -50,7 +52,7 @@ export const getEventEpic = (action$, _, {ajax}) =>
   action$.ofType(ACTION_TYPES.GET_EVENT)
     .mergeMap(action =>
       ajax({
-        url: `${BASE_ENDPOINT}${action.payload}/${API_KEY_PATH}&expand=venue`,
+        url: `${BASE_ENDPOINT}${action.payload}/${API_KEY_PATH}${EVENT_QUERY_PATH}`,
         crossDomain: true
       })
         .map(({ response }) => ({

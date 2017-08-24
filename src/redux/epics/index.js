@@ -2,8 +2,9 @@ import { combineEpics } from 'redux-observable';
 import 'rxjs/add/operator/mergeMap';
 import { getCategoryEpic } from './category.epics';
 import { getEventsEpic, returnEventsActionOnLocationChange, getEventEpic, returnEventActionOnLocationChange } from './event.epics';
-import { getAddressEpic } from './address.epics'
-import { geolocationEpic } from './geolocation.epics'
+import { getAddressEpic } from './address.epics';
+import { geolocationEpic } from './geolocation.epics';
+import { getDirectionsEpic } from './directions.epics';
 import { Observable } from 'rxjs';
 
 
@@ -16,5 +17,6 @@ combineEpics(
   getEventEpic,
   returnEventActionOnLocationChange,
   geolocationEpic,
-  returnEventActionOnLocationChange
+  returnEventActionOnLocationChange,
+  getDirectionsEpic
 )(...args, { ajax: Observable.ajax })

@@ -65,7 +65,16 @@ export const getGeolocation = location => ({
   payload: location
 });
 
+export const getDirections = locations => ({
+  type: ACTION_TYPES.GET_DIRECTIONS,
+  payload: locations
+});
+
+export const hideDirectionsWindow = () => ({
+  type: ACTION_TYPES.HIDE_DIRECTIONS_WINDOW,
+  payload: ''
+});
+
 export const updateEventDetailRender = () => ({
   type: ACTION_TYPES.UPDATE_EVENT_DETAIL_RENDER,
 });
-
