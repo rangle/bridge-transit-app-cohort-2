@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { inputChange, setSearchKeyword, getCategories, setAddresses, selectAddress, saveAddress, addressInputChange,
-  showAddressWindow, hideAddressWindow, getGeolocation } from './../redux/actions';
+  showAddressWindow, hideAddressWindow, getGeolocation, getDirections, hideDirectionsWindow } from './../redux/actions';
 import { Navigation } from './Navigation';
 import { AddressWindow } from './AddressWindow';
 
@@ -46,6 +46,9 @@ const connectConfig = connect(state => ({
   displayAddressWindow: state.address.displayAddressWindow,
   categoriesFetching: state.category.isFetching,
   eventsFetching: state.events.isFetching,
+  directions: state.directions.directions,
+  directionsFetching: state.directions.isFetching,
+  displayDirectionsWindow: state.directions.displayDirectionsWindow
 }), {
   inputChange,
   setSearchKeyword,
@@ -57,6 +60,8 @@ const connectConfig = connect(state => ({
   showAddressWindow,
   hideAddressWindow,
   getGeolocation,
+  getDirections,
+  hideDirectionsWindow
 });
 
 export default connectConfig(App);
