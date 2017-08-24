@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from './Button';
 import { SimpleMap } from './SimpleMap';
 import { Spinner } from './Spinner';
+import { DirectionsWindow } from './DirectionsWindow';
 
 export const EventDetails = (props) => {
     if (props.eventError){
@@ -10,6 +11,11 @@ export const EventDetails = (props) => {
       return <div className="overlay"><Spinner/></div>;
     } else {
       return (<div className='event-details-card'>
+        {
+          props.displayDirectionsWindow ?
+          <DirectionsWindow {...props} />
+          : null 
+        }
           <div className="event-details-container">
             <h3>{props.event.name.text}</h3>
             {
@@ -29,7 +35,22 @@ export const EventDetails = (props) => {
                   aria-label='Buy Tickets'
                   handleClick= { () => window.location.assign(props.event.url)}
                 />
-            } </p>
+            } 
+                <button className="btn btn-default button is-primary is-large" 
+                        onClick={() => props.getDirections({
+                          origin: {
+                            //TODO: replace this with "current address:"
+                                    lat: props.savedAddress.geometry.location.lat || '43.65711530000001',
+                                    lng: props.savedAddress.geometry.location.lng || '-79.4002088'
+                                  },
+                          destination: {
+                                    lat: props.event.venue.latitude,
+                                    lng: props.event.venue.longitude
+                          }
+                })}>
+                  Get Directions
+                </button>
+            </p>
           </div>
           <SimpleMap
             containerElement={
