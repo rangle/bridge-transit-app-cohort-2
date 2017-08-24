@@ -74,3 +74,7 @@ export const hideDirectionsWindow = () => ({
   type: ACTION_TYPES.HIDE_DIRECTIONS_WINDOW,
   payload: ''
 });
+
+export const updateEventDetailRender = () => ({
+  type: ACTION_TYPES.UPDATE_EVENT_DETAIL_RENDER,
+});

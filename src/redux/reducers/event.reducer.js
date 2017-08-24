@@ -4,6 +4,7 @@ const DEFAULT_STATE = {
   event: null,
   isFetching: false,
   didInvalidate: false,
+  isPreview: true,
 };
 
 export const eventReducer = (state = DEFAULT_STATE, action) => {
@@ -15,7 +16,12 @@ export const eventReducer = (state = DEFAULT_STATE, action) => {
       return {...state, event: action.payload, isFetching: false, didInvalidate: false}
     case ACTION_TYPES.SET_EVENT_INVALIDATE:
       return {...state, isFetching: false, didInvalidate: true, event: null}
+    case ACTION_TYPES.UPDATE_EVENT_DETAIL_RENDER:
+      return {...state, isPreview: false}
     default:
       return state;
   }
 }
+
+
+
