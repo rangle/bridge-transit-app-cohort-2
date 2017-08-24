@@ -15,6 +15,7 @@ export const DirectionsWindow = props => {
                         <span>&#10005;</span>
                     </button>
                     <h1>Transit Directions</h1>
+                    <div className="directions-scrollable">
                     <div className="directions-addresses">
                         <DirectionsLocation label="From:"
                                             content={props.savedAddress.formatted_address}
@@ -45,6 +46,7 @@ export const DirectionsWindow = props => {
                         }
                         </div>
                         <DirectionsPanel {...props} />
+                    </div>
                     </div>
                 </div>
             </div> 
